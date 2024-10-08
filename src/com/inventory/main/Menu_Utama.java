@@ -25,6 +25,7 @@ import com.inventory.view.Laporan_BarangMasuk;
 import com.inventory.view.Laporan_Pemesanan;
 import com.inventory.view.Master_Distributor;
 import com.inventory.view.Master_JenisBarang;
+import com.inventory.view.Master_Pengangkut;
 import com.inventory.view.Master_Pengguna;
 import com.inventory.view.Menu_Settings;
 import com.inventory.view.Transaksi_BarangKeluar;
@@ -339,6 +340,7 @@ public class Menu_Utama extends javax.swing.JFrame {
         ImageIcon iconJenisBarang   = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_survey_20px.png"));
         ImageIcon iconDistributor   = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_supplier_20px.png"));
         ImageIcon iconPengguna      = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_user_20px.png"));
+        ImageIcon iconPengangkut      = new ImageIcon(getClass().getResource("/com/inventory/img/icons8-truck-20.png"));
         
         //Source Icon Menu Transaksi
         ImageIcon iconTransaksi     = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_create_order_20px.png"));
@@ -394,6 +396,16 @@ public class Menu_Utama extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 pnMain.removeAll();
                 pnMain.add(new Master_Pengguna());
+                pnMain.repaint();
+                pnMain.revalidate();
+            }
+            
+        });
+        MenuItem menuPengangkut = new MenuItem(null, true, iconPengangkut, "Pengangkut", new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pnMain.removeAll();
+                pnMain.add(new Master_Pengangkut());
                 pnMain.repaint();
                 pnMain.revalidate();
             }
@@ -478,7 +490,7 @@ public class Menu_Utama extends javax.swing.JFrame {
         });
         
         
-        MenuItem menuMaster      = new MenuItem(iconMaster, false, null, "Master", null, menuBarang,menuJenisBarang,menuDistributor, menuPengguna);
+        MenuItem menuMaster      = new MenuItem(iconMaster, false, null, "Master", null, menuBarang,menuJenisBarang,menuDistributor, menuPengguna,menuPengangkut);
         MenuItem menuTransaksi   = new MenuItem(iconTransaksi, false, null, "Transaksi", null,transaksiPemesanan,transaksiBarangMasuk,transaksiBarangKeluar);
         MenuItem menuReport      = new MenuItem(iconReport, false, null, "Report", null,laporanBarang,laporanPemesanan, laporanBarangMasuk, laporanBarangKeluar);
         
