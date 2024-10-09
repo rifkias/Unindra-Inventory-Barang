@@ -15,6 +15,7 @@ public class Model_Pemesanan {
     private Long total_pesan;
     private Model_Distributor mod_distributor;
     private Model_Pengguna mod_pengguna;
+    private Model_Pengangkut mod_pengangkut;
 
     public String getNo_pesan() {
         return no_pesan;
@@ -56,6 +57,13 @@ public class Model_Pemesanan {
         this.mod_pengguna = mod_pengguna;
     }
 
+    public Model_Pengangkut getMod_pengangkut() {
+        return mod_pengangkut;
+    }
+
+    public void setMod_pengangkut(Model_Pengangkut mod_pengangkut) {
+        this.mod_pengangkut = mod_pengangkut;
+    }
     
 
     
