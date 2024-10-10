@@ -13,6 +13,7 @@ import com.inventory.model.Model_Barang;
 import com.inventory.model.Model_DetPemesanan;
 import com.inventory.model.Model_Distributor;
 import com.inventory.model.Model_Pemesanan;
+import com.inventory.model.Model_Pengangkut;
 import com.inventory.model.Model_Pengguna;
 import com.inventory.model.Model_SemPemesanan;
 import com.inventory.service.Service_DetPemesanan;
@@ -1249,6 +1250,7 @@ public class Transaksi_Pemesanan extends javax.swing.JPanel {
             String kode = txtKode.getText();
             String nama = txtNama.getText();
             String id_dis   = txtId.getText();
+            String id_pengangkut   = txtIdPengangkut.getText();
             String status = "Sedang di pesan";
             Long total = Long.parseLong(lbTotalPesan.getText());
             
@@ -1257,6 +1259,7 @@ public class Transaksi_Pemesanan extends javax.swing.JPanel {
             Model_Barang brg = new Model_Barang();
             Model_Pemesanan psn = new Model_Pemesanan();
             Model_DetPemesanan det = new Model_DetPemesanan();
+            Model_Pengangkut png = new Model_Pengangkut();
 
             //Simpan Tabel Pemesanan
             psn.setNo_pesan(no_pesan);
@@ -1264,9 +1267,11 @@ public class Transaksi_Pemesanan extends javax.swing.JPanel {
             psn.setTotal_pesan(total);
             dis.setId_distributor(id_dis);
             pgn.setId_pengguna(id);
+            png.setKode_pengangkut(id_pengangkut);
             
             psn.setMod_distributor(dis);
             psn.setMod_pengguna(pgn);
+            psn.setMod_pengangkut(png);
             
             //Simpan Tabel Detail Pemesanan
             det.setMod_pesan(psn);

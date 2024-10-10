@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import com.inventory.model.Model_Distributor;
 import com.inventory.model.Model_Pemesanan;
 import com.inventory.model.Model_Pengguna;
+import com.inventory.model.Model_Pengangkut;
 import com.inventory.service.Service_Pemesanan;
 
 public class DAO_Pemesanan implements Service_Pemesanan{
@@ -28,7 +29,7 @@ public class DAO_Pemesanan implements Service_Pemesanan{
     @Override
     public void tambahData(Model_Pemesanan mod_pesan) {
         PreparedStatement st = null;
-        String sql = "INSERT INTO pemesanan (no_pesan, tgl_pesan, total_pesan, id_distributor, id_pengguna) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO pemesanan (no_pesan, tgl_pesan, total_pesan, id_distributor, id_pengguna,id_pengangkutan) VALUES (?,?,?,?,?,?)";
         try{
             st = conn.prepareStatement(sql);
             
@@ -37,6 +38,7 @@ public class DAO_Pemesanan implements Service_Pemesanan{
             st.setLong  (3, mod_pesan.getTotal_pesan());
             st.setString(4, mod_pesan.getMod_distributor().getId_distributor());
             st.setString(5, mod_pesan.getMod_pengguna().getId_pengguna());
+            st.setString(6, mod_pesan.getMod_pengangkut().getKode_pengangkut());
             
             st.executeUpdate();
         }catch (SQLException ex) {
@@ -90,15 +92,18 @@ public class DAO_Pemesanan implements Service_Pemesanan{
                 Model_Pemesanan psn = new Model_Pemesanan();
                 Model_Distributor dst = new Model_Distributor();
                 Model_Pengguna pgn = new Model_Pengguna();
+                Model_Pengangkut png = new Model_Pengangkut();
                 
                 psn.setNo_pesan(rs.getString ("no_pesan"));
                 psn.setTgl_pesan(rs.getString ("tgl_pesan"));
                 psn.setTotal_pesan(rs.getLong("total_pesan"));
                 dst.setId_distributor(rs.getString("id_distributor"));
                 pgn.setId_pengguna(rs.getString("id_pengguna"));
+                png.setKode_pengangkut(rs.getString("id_pengangkutan"));
                                 
                 psn.setMod_distributor(dst);
                 psn.setMod_pengguna(pgn);
+                psn.setMod_pengangkut(png);
                 list.add(psn);
             }
           return list;
@@ -136,15 +141,18 @@ public class DAO_Pemesanan implements Service_Pemesanan{
                 Model_Pemesanan psn = new Model_Pemesanan();
                 Model_Distributor dst = new Model_Distributor();
                 Model_Pengguna pgn = new Model_Pengguna();
+                Model_Pengangkut png = new Model_Pengangkut();
 
                 psn.setNo_pesan         (rs.getString ("no_pesan"));
                 psn.setTgl_pesan        (rs.getString ("tgl_pesan"));
                 psn.setTotal_pesan      (rs.getLong   ("total_pesan"));
                 dst.setId_distributor   (rs.getString ("id_distributor"));
                 pgn.setId_pengguna      (rs.getString ("id_pengguna"));
+                png.setKode_pengangkut(rs.getString("id_pengangkutan"));
                 
                 psn.setMod_distributor(dst);
                 psn.setMod_pengguna(pgn);
+                psn.setMod_pengangkut(png);
                                 
                 list.add(psn);
             }
