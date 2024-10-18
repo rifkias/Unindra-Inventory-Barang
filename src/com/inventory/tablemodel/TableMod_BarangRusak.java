@@ -5,27 +5,32 @@
  */
 package com.inventory.tablemodel;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
-import com.inventory.model.Model_DetBarangMasuk;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
+import com.inventory.model.Model_BarangRusak;
 
 /**
  *
  * @author Uhnuy Kozuki
  */
-public class TableMod_DetBarangMasuk extends AbstractTableModel{
-    private List<Model_DetBarangMasuk> list = new ArrayList<>();
+public class TableMod_BarangRusak extends AbstractTableModel {
     
-    public void tambahData(Model_DetBarangMasuk mod_detmasuk){
-        list.add(mod_detmasuk);
+    private List<Model_BarangRusak> list = new ArrayList<>();
+    
+    public void tambahData(Model_BarangRusak mod_bar){
+        list.add(mod_bar);
         fireTableRowsInserted(list.size() - 1, list.size() -1);
         JOptionPane.showMessageDialog(null, "Data Berhasil ditambahkan");
     }
     
-    public void perbaruiData(int row, Model_DetBarangMasuk mod_detmasuk){
-        list.add(row, mod_detmasuk);
+    public void perbaruiData(int row, Model_BarangRusak mod_bar){
+        list.add(row, mod_bar);
         fireTableDataChanged();
         JOptionPane.showMessageDialog(null, "Data Berhasil di perbarui");
     }
@@ -41,18 +46,18 @@ public class TableMod_DetBarangMasuk extends AbstractTableModel{
         fireTableDataChanged();
     }
 
-    public void setData(List<Model_DetBarangMasuk> list){
+    public void setData(List<Model_BarangRusak> list){
         clear();
         this.list.addAll(list);
         fireTableDataChanged();
     }
     
-    public void setData(int index, Model_DetBarangMasuk mod_detmasuk){
-        list.set(index, mod_detmasuk);
+    public void setData(int index, Model_BarangRusak mod_bar){
+        list.set(index, mod_bar);
         fireTableRowsUpdated(index, index);
     }
     
-    public Model_DetBarangMasuk getData(int index){
+    public Model_BarangRusak getData(int index){
         return list.get(index);
     }
     
@@ -61,31 +66,29 @@ public class TableMod_DetBarangMasuk extends AbstractTableModel{
         return list.size();
     }
 
-    private final String[] columnNames = {"No", "No Masuk", "Kode Barang", "Nama Barang", "Harga", "Satuan", "Jumlah Masuk","Subtotal"};
+    private final String[] columnNames = {"No", "Kode Barang Rusak","Kode Barang","Nama Barang", "Alasan", "Qty"};
     
     @Override
     public int getColumnCount() {
         return columnNames.length;
     }
-
+    
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
-        if (columnIndex == 0) {
-            return "    " + (rowIndex + 1);
-        } else {
-            switch (columnIndex - 1) {
-                case 0: return list.get(rowIndex).getMod_masuk().getNo_masuk();
-                case 1: return list.get(rowIndex).getMod_barang().getKode_barang();
-                case 2: return list.get(rowIndex).getMod_barang().getNama_barang();
-                case 3: return list.get(rowIndex).getMod_barang().getHarga();
-                case 4: return list.get(rowIndex).getMod_barang().getSatuan();
-                case 5: return list.get(rowIndex).getJml_masuk();
-                case 6: return list.get(rowIndex).getSubtotal_masuk();
+        public Object getValueAt(int rowIndex, int columnIndex) {
+            if (columnIndex == 0) {
+                return "    " + (rowIndex + 1);
+            } else {
+                switch (columnIndex - 1) {
+                    case 0: return list.get(rowIndex).getNo_barang_rusak();
+                    case 1: return list.get(rowIndex).getBarang().getKode_barang();
+                    case 2: return list.get(rowIndex).getBarang().getNama_barang();
+                    case 3: return list.get(rowIndex).getAlasan();
+                    case 4: return list.get(rowIndex).getStok();
 
-                default: return null;
+                    default: return null;
+                }
             }
         }
-    }
     
     @Override
     public String getColumnName(int column) {

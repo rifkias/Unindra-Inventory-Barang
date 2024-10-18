@@ -1,31 +1,30 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.inventory.tablemodel;
 
+import com.inventory.model.Model_TempDetReturn;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
-import com.inventory.model.Model_DetBarangMasuk;
 
 /**
  *
- * @author Uhnuy Kozuki
+ * @author rifki-alfariz-shidiq
  */
-public class TableMod_DetBarangMasuk extends AbstractTableModel{
-    private List<Model_DetBarangMasuk> list = new ArrayList<>();
-    
-    public void tambahData(Model_DetBarangMasuk mod_detmasuk){
-        list.add(mod_detmasuk);
+public class TableMod_SemBarangReturn extends AbstractTableModel {
+    private List<Model_TempDetReturn> list = new ArrayList<>();
+
+   public void tambahData(Model_TempDetReturn mod_keluar){
+        list.add(mod_keluar);
         fireTableRowsInserted(list.size() - 1, list.size() -1);
         JOptionPane.showMessageDialog(null, "Data Berhasil ditambahkan");
     }
     
-    public void perbaruiData(int row, Model_DetBarangMasuk mod_detmasuk){
-        list.add(row, mod_detmasuk);
+    public void perbaruiData(int row, Model_TempDetReturn mod_keluar){
+        list.add(row, mod_keluar);
         fireTableDataChanged();
         JOptionPane.showMessageDialog(null, "Data Berhasil di perbarui");
     }
@@ -41,18 +40,18 @@ public class TableMod_DetBarangMasuk extends AbstractTableModel{
         fireTableDataChanged();
     }
 
-    public void setData(List<Model_DetBarangMasuk> list){
+    public void setData(List<Model_TempDetReturn> list){
         clear();
         this.list.addAll(list);
         fireTableDataChanged();
     }
     
-    public void setData(int index, Model_DetBarangMasuk mod_detmasuk){
-        list.set(index, mod_detmasuk);
+    public void setData(int index, Model_TempDetReturn mod_keluar){
+        list.set(index, mod_keluar);
         fireTableRowsUpdated(index, index);
     }
     
-    public Model_DetBarangMasuk getData(int index){
+    public Model_TempDetReturn getData(int index){
         return list.get(index);
     }
     
@@ -61,7 +60,7 @@ public class TableMod_DetBarangMasuk extends AbstractTableModel{
         return list.size();
     }
 
-    private final String[] columnNames = {"No", "No Masuk", "Kode Barang", "Nama Barang", "Harga", "Satuan", "Jumlah Masuk","Subtotal"};
+    private final String[] columnNames = {"No", "Kode Barang", "Nama Barang","Satuan","Harga","Stok","Jumlah Return"};
     
     @Override
     public int getColumnCount() {
@@ -74,13 +73,12 @@ public class TableMod_DetBarangMasuk extends AbstractTableModel{
             return "    " + (rowIndex + 1);
         } else {
             switch (columnIndex - 1) {
-                case 0: return list.get(rowIndex).getMod_masuk().getNo_masuk();
-                case 1: return list.get(rowIndex).getMod_barang().getKode_barang();
-                case 2: return list.get(rowIndex).getMod_barang().getNama_barang();
-                case 3: return list.get(rowIndex).getMod_barang().getHarga();
-                case 4: return list.get(rowIndex).getMod_barang().getSatuan();
-                case 5: return list.get(rowIndex).getJml_masuk();
-                case 6: return list.get(rowIndex).getSubtotal_masuk();
+                case 0: return list.get(rowIndex).getBarang().getKode_barang();
+                case 1: return list.get(rowIndex).getBarang().getNama_barang();
+                case 2: return list.get(rowIndex).getBarang().getSatuan();
+                case 3: return list.get(rowIndex).getBarang().getHarga();
+                case 4: return list.get(rowIndex).getBarang().getStok();
+                case 5: return list.get(rowIndex).getQty();
 
                 default: return null;
             }
@@ -95,4 +93,5 @@ public class TableMod_DetBarangMasuk extends AbstractTableModel{
             return columnNames[column];
         }
     }
+
 }

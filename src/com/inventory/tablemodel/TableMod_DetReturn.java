@@ -9,23 +9,24 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
-import com.inventory.model.Model_DetBarangMasuk;
+import com.inventory.model.Model_DetBarangReturn;
 
 /**
  *
  * @author Uhnuy Kozuki
  */
-public class TableMod_DetBarangMasuk extends AbstractTableModel{
-    private List<Model_DetBarangMasuk> list = new ArrayList<>();
+public class TableMod_DetReturn extends AbstractTableModel{
     
-    public void tambahData(Model_DetBarangMasuk mod_detmasuk){
-        list.add(mod_detmasuk);
+    private List<Model_DetBarangReturn> list = new ArrayList<>();
+    
+    public void tambahData(Model_DetBarangReturn mod_detpesan){
+        list.add(mod_detpesan);
         fireTableRowsInserted(list.size() - 1, list.size() -1);
         JOptionPane.showMessageDialog(null, "Data Berhasil ditambahkan");
     }
     
-    public void perbaruiData(int row, Model_DetBarangMasuk mod_detmasuk){
-        list.add(row, mod_detmasuk);
+    public void perbaruiData(int row, Model_DetBarangReturn mod_detpesan){
+        list.add(row, mod_detpesan);
         fireTableDataChanged();
         JOptionPane.showMessageDialog(null, "Data Berhasil di perbarui");
     }
@@ -41,18 +42,18 @@ public class TableMod_DetBarangMasuk extends AbstractTableModel{
         fireTableDataChanged();
     }
 
-    public void setData(List<Model_DetBarangMasuk> list){
+    public void setData(List<Model_DetBarangReturn> list){
         clear();
         this.list.addAll(list);
         fireTableDataChanged();
     }
     
-    public void setData(int index, Model_DetBarangMasuk mod_detmasuk){
-        list.set(index, mod_detmasuk);
+    public void setData(int index, Model_DetBarangReturn mod_detpesan){
+        list.set(index, mod_detpesan);
         fireTableRowsUpdated(index, index);
     }
     
-    public Model_DetBarangMasuk getData(int index){
+    public Model_DetBarangReturn getData(int index){
         return list.get(index);
     }
     
@@ -61,7 +62,7 @@ public class TableMod_DetBarangMasuk extends AbstractTableModel{
         return list.size();
     }
 
-    private final String[] columnNames = {"No", "No Masuk", "Kode Barang", "Nama Barang", "Harga", "Satuan", "Jumlah Masuk","Subtotal"};
+    private final String[] columnNames = {"No", "No Return", "Kode Barang", "Nama Barang", "Jumlah Return"};
     
     @Override
     public int getColumnCount() {
@@ -74,13 +75,10 @@ public class TableMod_DetBarangMasuk extends AbstractTableModel{
             return "    " + (rowIndex + 1);
         } else {
             switch (columnIndex - 1) {
-                case 0: return list.get(rowIndex).getMod_masuk().getNo_masuk();
-                case 1: return list.get(rowIndex).getMod_barang().getKode_barang();
-                case 2: return list.get(rowIndex).getMod_barang().getNama_barang();
-                case 3: return list.get(rowIndex).getMod_barang().getHarga();
-                case 4: return list.get(rowIndex).getMod_barang().getSatuan();
-                case 5: return list.get(rowIndex).getJml_masuk();
-                case 6: return list.get(rowIndex).getSubtotal_masuk();
+                case 0: return list.get(rowIndex).getNo_return();
+                case 1: return list.get(rowIndex).getKode_barang();
+                case 2: return list.get(rowIndex).getBarang().getNama_barang();
+                case 3: return list.get(rowIndex).getQty();
 
                 default: return null;
             }

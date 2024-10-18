@@ -95,7 +95,7 @@ public class DAO_DetBarangMasuk implements Service_DetBarangMasuk{
         List list = new ArrayList();
         ResultSet rs = null;
         String sql ="SELECT det_masuk.no_masuk, det_masuk.kode_barang, "
-                + "brg.nama_barang, brg.harga, det_masuk.jml_masuk, "
+                + "brg.nama_barang, brg.harga, brg.satuan, det_masuk.jml_masuk, "
                 + "det_masuk.subtotal_masuk "
                 + "FROM detail_barang_masuk det_masuk "
                 + "INNER JOIN barang_masuk masuk ON masuk.no_masuk=det_masuk.no_masuk "
@@ -115,6 +115,7 @@ public class DAO_DetBarangMasuk implements Service_DetBarangMasuk{
                 brg.setKode_barang      (rs.getString ("kode_barang"));
                 brg.setNama_barang      (rs.getString ("nama_barang"));
                 brg.setHarga            (rs.getLong   ("harga"));
+                brg.setSatuan            (rs.getString   ("satuan"));
                 det_masuk.setJml_masuk  (rs.getInt("jml_masuk"));
                 det_masuk.setSubtotal_masuk(rs.getLong   ("subtotal_masuk"));
                                 

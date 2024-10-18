@@ -23,6 +23,7 @@ import com.inventory.view.Laporan_Barang;
 import com.inventory.view.Laporan_BarangKeluar;
 import com.inventory.view.Laporan_BarangMasuk;
 import com.inventory.view.Laporan_Pemesanan;
+import com.inventory.view.Master_BarangRusak;
 import com.inventory.view.Master_Distributor;
 import com.inventory.view.Master_JenisBarang;
 import com.inventory.view.Master_Pengangkut;
@@ -31,6 +32,7 @@ import com.inventory.view.Menu_Settings;
 import com.inventory.view.Transaksi_BarangKeluar;
 import com.inventory.view.Transaksi_BarangMasuk;
 import com.inventory.view.Transaksi_Pemesanan;
+import com.inventory.view.Transaksi_Return;
 
 public class Menu_Utama extends javax.swing.JFrame {
 
@@ -340,13 +342,15 @@ public class Menu_Utama extends javax.swing.JFrame {
         ImageIcon iconJenisBarang   = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_survey_20px.png"));
         ImageIcon iconDistributor   = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_supplier_20px.png"));
         ImageIcon iconPengguna      = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_user_20px.png"));
-        ImageIcon iconPengangkut      = new ImageIcon(getClass().getResource("/com/inventory/img/icons8-truck-20.png"));
+        ImageIcon iconPengangkut      = new ImageIcon(getClass().getResource("/com/inventory/img/icons8-truck-21.png"));
         
         //Source Icon Menu Transaksi
         ImageIcon iconTransaksi     = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_create_order_20px.png"));
         ImageIcon iconPemesanan     = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_delivered_20px.png"));
         ImageIcon iconBarangMasuk     = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_deliver_food_20px.png"));
         ImageIcon iconBarangKeluar     = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_move_stock_20px.png"));
+        ImageIcon iconBarangRusak     = new ImageIcon(getClass().getResource("/com/inventory/img/icons8-broken-20.png"));
+        ImageIcon iconBarangReturn     = new ImageIcon(getClass().getResource("/com/inventory/img/icons8-return-baggage-20.png"));
         
         //Source Icon Menu Report
         ImageIcon iconReport     = new ImageIcon(getClass().getResource("/com/inventory/img/icons8_presentation_20px.png"));
@@ -433,6 +437,16 @@ public class Menu_Utama extends javax.swing.JFrame {
                 pnMain.revalidate();
             }
         });
+        MenuItem transaksiBarangReturn = new MenuItem(null, true, iconBarangReturn, "Barang Return", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pnMain.removeAll();
+                String Id = lb_id.getText();
+                pnMain.add(new Transaksi_Return(Id));
+                pnMain.repaint();
+                pnMain.revalidate();
+            }
+        });
         
         MenuItem transaksiBarangKeluar = new MenuItem(null, true, iconBarangKeluar, "Barang Keluar", new ActionListener() {
             @Override
@@ -440,6 +454,15 @@ public class Menu_Utama extends javax.swing.JFrame {
                 pnMain.removeAll();
                 String Id = lb_id.getText();
                 pnMain.add(new Transaksi_BarangKeluar(Id));
+                pnMain.repaint();
+                pnMain.revalidate();
+            }
+        });
+        MenuItem transaksiBarangRusak = new MenuItem(null, true, iconBarangRusak, "Barang Rusak", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pnMain.removeAll();
+                pnMain.add(new Master_BarangRusak());
                 pnMain.repaint();
                 pnMain.revalidate();
             }
@@ -491,7 +514,7 @@ public class Menu_Utama extends javax.swing.JFrame {
         
         
         MenuItem menuMaster      = new MenuItem(iconMaster, false, null, "Master", null, menuBarang,menuJenisBarang,menuDistributor, menuPengguna,menuPengangkut);
-        MenuItem menuTransaksi   = new MenuItem(iconTransaksi, false, null, "Transaksi", null,transaksiPemesanan,transaksiBarangMasuk,transaksiBarangKeluar);
+        MenuItem menuTransaksi   = new MenuItem(iconTransaksi, false, null, "Transaksi", null,transaksiPemesanan,transaksiBarangMasuk,transaksiBarangKeluar,transaksiBarangRusak,transaksiBarangReturn);
         MenuItem menuReport      = new MenuItem(iconReport, false, null, "Report", null,laporanBarang,laporanPemesanan, laporanBarangMasuk, laporanBarangKeluar);
         
         
