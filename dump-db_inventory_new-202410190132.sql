@@ -82,8 +82,8 @@ DROP TABLE IF EXISTS `barang_return`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `barang_return` (
-  `no_return` char(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `no_barang_masuk` char(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `no_return` char(12) NOT NULL,
+  `no_barang_masuk` char(12) DEFAULT NULL,
   `tgl_return` date DEFAULT NULL,
   PRIMARY KEY (`no_return`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -97,9 +97,9 @@ DROP TABLE IF EXISTS `barang_rusak`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `barang_rusak` (
-  `no_barang_rusak` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `kode_barang` char(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `alasan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `no_barang_rusak` char(10)  NOT NULL,
+  `kode_barang` char(8)  NOT NULL,
+  `alasan` text ,
   `qty` int DEFAULT NULL,
   PRIMARY KEY (`no_barang_rusak`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -245,7 +245,7 @@ DROP TABLE IF EXISTS `detail_barang_return`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `detail_barang_return` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `no_return` char(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `no_return` char(12)  DEFAULT NULL,
   `kode_barang` char(8) DEFAULT NULL,
   `qty` int DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -334,8 +334,8 @@ DROP TABLE IF EXISTS `pengangkutan`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pengangkutan` (
-  `kode_pengangkut` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `nama_pengangkut` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `kode_pengangkut` varchar(100)  NOT NULL,
+  `nama_pengangkut` varchar(100)  DEFAULT NULL,
   PRIMARY KEY (`kode_pengangkut`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

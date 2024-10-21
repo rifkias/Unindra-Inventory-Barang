@@ -3,16 +3,16 @@ package com.inventory.view;
 import com.inventory.dao.DAO_Laporan;
 import com.inventory.service.Service_Laporan;
 
-public class Laporan_Barang extends javax.swing.JPanel {
+public class Laporan_Pengangkut extends javax.swing.JPanel {
 
     private final Service_Laporan servis_lap = new DAO_Laporan();
     private String id;
     
-    public Laporan_Barang(String id) {
+    public Laporan_Pengangkut(String id) {
         initComponents();
         this.id = id;
         pn_main.setVisible(true);
-        pn_dataBarang.setVisible(false);
+        pn_dataPengangkut.setVisible(false);
         pn_transaksiBarang.setVisible(false);
     }
     
@@ -26,7 +26,7 @@ public class Laporan_Barang extends javax.swing.JPanel {
         pn_pilihLaporan = new javax.swing.JPanel();
         cbxLaporan = new javax.swing.JComboBox<>();
         pn_main = new javax.swing.JPanel();
-        pn_dataBarang = new javax.swing.JPanel();
+        pn_dataPengangkut = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         btnCetak = new javax.swing.JButton();
         pn_transaksiBarang = new javax.swing.JPanel();
@@ -42,13 +42,13 @@ public class Laporan_Barang extends javax.swing.JPanel {
         tampilData.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Poppins", 0, 24)); // NOI18N
-        jLabel1.setText("Laporan Barang");
+        jLabel1.setText("Laporan Pengangkut");
 
         pn_pilihLaporan.setBackground(new java.awt.Color(255, 255, 255));
         pn_pilihLaporan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cbxLaporan.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        cbxLaporan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih Jenis Laporan --", "Laporan Data Barang", "Laporan Transaksi Barang" }));
+        cbxLaporan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih Jenis Laporan --", "Laporan Data Pengangkut", "Laporan Detail Pengangkut", " " }));
         cbxLaporan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxLaporanActionPerformed(evt);
@@ -71,7 +71,7 @@ public class Laporan_Barang extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Laporan Data Barang");
+        jLabel4.setText("Laporan Data Pengangkut");
 
         btnCetak.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         btnCetak.setText("CETAK");
@@ -81,23 +81,23 @@ public class Laporan_Barang extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout pn_dataBarangLayout = new javax.swing.GroupLayout(pn_dataBarang);
-        pn_dataBarang.setLayout(pn_dataBarangLayout);
-        pn_dataBarangLayout.setHorizontalGroup(
-            pn_dataBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_dataBarangLayout.createSequentialGroup()
+        javax.swing.GroupLayout pn_dataPengangkutLayout = new javax.swing.GroupLayout(pn_dataPengangkut);
+        pn_dataPengangkut.setLayout(pn_dataPengangkutLayout);
+        pn_dataPengangkutLayout.setHorizontalGroup(
+            pn_dataPengangkutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_dataPengangkutLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pn_dataBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pn_dataPengangkutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
-                    .addGroup(pn_dataBarangLayout.createSequentialGroup()
+                    .addGroup(pn_dataPengangkutLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnCetak, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        pn_dataBarangLayout.setVerticalGroup(
-            pn_dataBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_dataBarangLayout.createSequentialGroup()
+        pn_dataPengangkutLayout.setVerticalGroup(
+            pn_dataPengangkutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_dataPengangkutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
@@ -105,7 +105,7 @@ public class Laporan_Barang extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        pn_pilihLaporan.add(pn_dataBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 274, 160));
+        pn_pilihLaporan.add(pn_dataPengangkut, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 274, 160));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -201,22 +201,22 @@ public class Laporan_Barang extends javax.swing.JPanel {
     private void cbxLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxLaporanActionPerformed
         if(cbxLaporan.getSelectedItem()=="-- Pilih Jenis Laporan --"){
             pn_main.setVisible(true);
-            pn_dataBarang.setVisible(false);
+            pn_dataPengangkut.setVisible(false);
             pn_transaksiBarang.setVisible(false);
         }else if(cbxLaporan.getSelectedItem()=="Laporan Data Barang"){
             pn_main.setVisible(false);
-            pn_dataBarang.setVisible(true);
+            pn_dataPengangkut.setVisible(true);
             pn_transaksiBarang.setVisible(false);
         }else if(cbxLaporan.getSelectedItem()=="Laporan Transaksi Barang"){
             pn_main.setVisible(false);
-            pn_dataBarang.setVisible(false);
+            pn_dataPengangkut.setVisible(false);
             pn_transaksiBarang.setVisible(true);
         }
     }//GEN-LAST:event_cbxLaporanActionPerformed
 
     private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
         mainPanel.removeAll();
-        mainPanel.add(new Laporan_Barang(id));
+        mainPanel.add(new Laporan_Pengangkut(id));
         mainPanel.repaint();
         mainPanel.revalidate();
     }//GEN-LAST:event_btnBatalActionPerformed
@@ -241,7 +241,7 @@ public class Laporan_Barang extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel mainPanel;
-    private javax.swing.JPanel pn_dataBarang;
+    private javax.swing.JPanel pn_dataPengangkut;
     private javax.swing.JPanel pn_main;
     private javax.swing.JPanel pn_pilihLaporan;
     private javax.swing.JPanel pn_tampilLaporan;
