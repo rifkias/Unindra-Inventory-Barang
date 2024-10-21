@@ -251,7 +251,7 @@ CREATE TABLE `detail_barang_return` (
   PRIMARY KEY (`id`),
   KEY `detail_barang_return_barang_return_FK` (`no_return`),
   CONSTRAINT `detail_barang_return_barang_return_FK` FOREIGN KEY (`no_return`) REFERENCES `barang_return` (`no_return`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
