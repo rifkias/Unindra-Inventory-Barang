@@ -22,6 +22,7 @@ public interface Service_Laporan {
     void lapPemesananPerPeriode     (JPanel jp, String tgl1, String tgl2);
     void lapPemesananPerBulan       (JPanel jp, String dt1, int dt2);
     void lapPemesananPerDistributor (JPanel jp, String id);
+    void lapPemesananPerPengangkut  (JPanel jp, String id);
     
     void lapBarangMasukPerTransaksi   (JPanel jp, String no);
     void lapBarangMasukPerPeriode     (JPanel jp, String tgl1, String tgl2);

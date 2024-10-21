@@ -328,6 +328,25 @@ public class DAO_Laporan implements Service_Laporan{
         }
     }
 
+    @Override
+    public void lapPemesananPerPengangkut(JPanel jp, String id) {
+       try {
+                String reportPath = "src/com/inventory/report/LapPesanPerPengangkut.jasper";
+                
+                HashMap<String, Object> parameters = new HashMap<>();
+                parameters.put("kode_pengangkut", id);
+
+                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+                //tampil panel
+                jp.setLayout(new BorderLayout());
+                jp.repaint();
+                jp.add(new JRViewer(print));
+                jp.revalidate();
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(null, e.getMessage());
+        }
+    }
+
     
     
     

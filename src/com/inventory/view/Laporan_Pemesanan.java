@@ -19,6 +19,7 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
         pn_perPeriode.setVisible(false);
         pn_perBulan.setVisible(false);
         pn_perDistributor.setVisible(false);
+        pn_perPengangkut.setVisible(false);
         
         setLayoutForm();
      }
@@ -28,6 +29,7 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
         t_dateFrom.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Tanggal Mulai");
         t_dateAfter.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Tanggal Akhir");
         t_id.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "ID Distributor");
+        t_id1.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "ID Pengangkut");
     }
     
     
@@ -66,6 +68,11 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
         cbx_bulan = new javax.swing.JComboBox<>();
         jYearChooser1 = new com.toedter.calendar.JYearChooser();
         btnCetakPerBulan = new javax.swing.JButton();
+        pn_perPengangkut = new javax.swing.JPanel();
+        t_id1 = new javax.swing.JTextField();
+        btn_pilih2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        btnCetakPerPengangkut = new javax.swing.JButton();
         btnBatal = new javax.swing.JButton();
         pn_tampilLaporan = new javax.swing.JPanel();
 
@@ -86,7 +93,7 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
         pn_pilihLaporan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cbx_laporan.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        cbx_laporan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih Jenis Laporan --", "Per Transaksi", "Per Distributor", "Per Periode", "Per Bulan" }));
+        cbx_laporan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih Jenis Laporan --", "Per Transaksi", "Per Distributor", "Per Periode", "Per Bulan", "Per Pengangkut" }));
         cbx_laporan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_laporanActionPerformed(evt);
@@ -192,7 +199,7 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
                 .addGroup(pn_perDistributorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pn_perDistributorLayout.createSequentialGroup()
-                        .addComponent(t_id)
+                        .addComponent(t_id, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(btn_pilih1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pn_perDistributorLayout.createSequentialGroup()
@@ -212,7 +219,7 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
                     .addComponent(btn_pilih1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCetakPerDistributor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pn_pilihLaporan.add(pn_perDistributor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 274, 180));
@@ -311,12 +318,12 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
                 .addGroup(pn_perBulanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbx_bulan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jYearChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pn_perBulanLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnCetakPerBulan, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(pn_perBulanLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCetakPerBulan, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pn_perBulanLayout.setVerticalGroup(
             pn_perBulanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -333,6 +340,61 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
         );
 
         pn_pilihLaporan.add(pn_perBulan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 274, 180));
+
+        t_id1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+
+        btn_pilih2.setText("...");
+        btn_pilih2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pilih2ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Pilih Pengangkut");
+
+        btnCetakPerPengangkut.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnCetakPerPengangkut.setText("CETAK");
+        btnCetakPerPengangkut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCetakPerPengangkutActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pn_perPengangkutLayout = new javax.swing.GroupLayout(pn_perPengangkut);
+        pn_perPengangkut.setLayout(pn_perPengangkutLayout);
+        pn_perPengangkutLayout.setHorizontalGroup(
+            pn_perPengangkutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_perPengangkutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pn_perPengangkutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                    .addGroup(pn_perPengangkutLayout.createSequentialGroup()
+                        .addComponent(t_id1)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_pilih2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pn_perPengangkutLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnCetakPerPengangkut, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        pn_perPengangkutLayout.setVerticalGroup(
+            pn_perPengangkutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_perPengangkutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pn_perPengangkutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_pilih2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnCetakPerPengangkut, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
+        pn_pilihLaporan.add(pn_perPengangkut, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 274, 180));
 
         btnBatal.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         btnBatal.setText("BATAL");
@@ -400,31 +462,43 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
             pn_perPeriode.setVisible(false);
             pn_perBulan.setVisible(false);
             pn_perDistributor.setVisible(false);
+            pn_perPengangkut.setVisible(false);
         }else if(cbx_laporan.getSelectedItem()=="Per Transaksi"){
             pn_main.setVisible(false);
             pn_perTransaksi.setVisible(true);
             pn_perPeriode.setVisible(false);
             pn_perBulan.setVisible(false);
             pn_perDistributor.setVisible(false);
+            pn_perPengangkut.setVisible(false);
         }else if(cbx_laporan.getSelectedItem()=="Per Periode"){
             pn_main.setVisible(false);
             pn_perTransaksi.setVisible(false);
             pn_perPeriode.setVisible(true);
             pn_perBulan.setVisible(false);
             pn_perDistributor.setVisible(false);
+            pn_perPengangkut.setVisible(false);
         }else if(cbx_laporan.getSelectedItem()=="Per Bulan"){
             pn_main.setVisible(false);
             pn_perTransaksi.setVisible(false);
             pn_perPeriode.setVisible(false);
             pn_perBulan.setVisible(true);
             pn_perDistributor.setVisible(false);
+            pn_perPengangkut.setVisible(false);
         }else if(cbx_laporan.getSelectedItem()=="Per Distributor"){
             pn_main.setVisible(false);
             pn_perTransaksi.setVisible(false);
             pn_perPeriode.setVisible(false);
             pn_perBulan.setVisible(false);
             pn_perDistributor.setVisible(true);
-        } 
+            pn_perPengangkut.setVisible(false);
+        }else if(cbx_laporan.getSelectedItem() == "Per Pengangkut"){
+            pn_main.setVisible(false);
+            pn_perTransaksi.setVisible(false);
+            pn_perPeriode.setVisible(false);
+            pn_perBulan.setVisible(false);
+            pn_perDistributor.setVisible(false);
+            pn_perPengangkut.setVisible(true);
+        }
     }//GEN-LAST:event_cbx_laporanActionPerformed
 
     private void btn_printPeriodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_printPeriodeActionPerformed
@@ -512,16 +586,32 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
         servis_lap.lapPemesananPerDistributor(pn_tampilLaporan,id);
     }//GEN-LAST:event_btnCetakPerDistributorActionPerformed
 
+    private void btn_pilih2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pilih2ActionPerformed
+        boolean closable = true;
+        Data_Pengangkut data = new Data_Pengangkut(null, closable);
+        data.setVisible(true);
+
+        t_id1.setText(data.model.getKode_pengangkut());
+    }//GEN-LAST:event_btn_pilih2ActionPerformed
+
+    private void btnCetakPerPengangkutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetakPerPengangkutActionPerformed
+         pn_tampilLaporan.removeAll();
+        String id = t_id1.getText();
+        servis_lap.lapPemesananPerPengangkut(pn_tampilLaporan,id);
+    }//GEN-LAST:event_btnCetakPerPengangkutActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnCetakPerBulan;
     private javax.swing.JButton btnCetakPerDistributor;
+    private javax.swing.JButton btnCetakPerPengangkut;
     private javax.swing.JButton btnCetakPerPeriode;
     private javax.swing.JButton btnCetakPerTransaksi;
     private javax.swing.JButton btn_dari;
     private javax.swing.JButton btn_pilih;
     private javax.swing.JButton btn_pilih1;
+    private javax.swing.JButton btn_pilih2;
     private javax.swing.JButton btn_sampai;
     private javax.swing.JComboBox<String> cbx_bulan;
     private javax.swing.JComboBox<String> cbx_laporan;
@@ -531,12 +621,14 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private com.toedter.calendar.JYearChooser jYearChooser1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel pn_main;
     private javax.swing.JPanel pn_perBulan;
     private javax.swing.JPanel pn_perDistributor;
+    private javax.swing.JPanel pn_perPengangkut;
     private javax.swing.JPanel pn_perPeriode;
     private javax.swing.JPanel pn_perTransaksi;
     private javax.swing.JPanel pn_pilihLaporan;
@@ -544,6 +636,7 @@ public class Laporan_Pemesanan extends javax.swing.JPanel {
     private javax.swing.JTextField t_dateAfter;
     private javax.swing.JTextField t_dateFrom;
     private javax.swing.JTextField t_id;
+    private javax.swing.JTextField t_id1;
     private javax.swing.JTextField t_noTransaksi;
     private javax.swing.JPanel tampilData;
     // End of variables declaration//GEN-END:variables
