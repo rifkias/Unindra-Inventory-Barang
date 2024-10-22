@@ -61,7 +61,7 @@ private List<Model_BarangReturn> list = new ArrayList<>();
         return list.size();
     }
 
-    private final String[] columnNames = {"No", "Kode Barang Return","Kode Barang Masuk","Tanggal Return"};
+    private final String[] columnNames = {"No","Kode Barang Return","Tipe", "Kode Referensi","Tanggal Return","Alasan"};
     
     @Override
     public int getColumnCount() {
@@ -75,8 +75,10 @@ private List<Model_BarangReturn> list = new ArrayList<>();
             } else {
                 switch (columnIndex - 1) {
                     case 0: return list.get(rowIndex).getNo_return();
-                    case 1: return list.get(rowIndex).getNo_barang_masuk();
-                    case 2: return list.get(rowIndex).getTgl_return();
+                    case 1: return list.get(rowIndex).getType();
+                    case 2: return list.get(rowIndex).getNo_referensi();
+                    case 3: return list.get(rowIndex).getTgl_return();
+                    case 4: return list.get(rowIndex).getAlasan();
 
                     default: return null;
                 }

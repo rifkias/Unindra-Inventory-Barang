@@ -34,13 +34,15 @@ public class DAO_BarangReturn implements Service_BarangReturn{
     @Override
     public void tambahData(Model_BarangReturn mod_return) {
         PreparedStatement st = null;
-        String sql = "INSERT INTO barang_return (no_return, tgl_return, no_barang_masuk) VALUES (?,?,?)";
+        String sql = "INSERT INTO barang_return (no_return, tgl_return, no_referensi,type,alasan) VALUES (?,?,?,?,?)";
         try{
             st = conn.prepareStatement(sql);
             
             st.setString(1, mod_return.getNo_return());
             st.setString(2, mod_return.getTgl_return());
-            st.setString(3, mod_return.getNo_barang_masuk());
+            st.setString(3, mod_return.getNo_referensi());
+            st.setString(4, mod_return.getType());
+            st.setString(5, mod_return.getAlasan());
             
             st.executeUpdate();
         }catch (SQLException ex) {
@@ -115,8 +117,10 @@ public class DAO_BarangReturn implements Service_BarangReturn{
                 Model_BarangReturn mbr = new Model_BarangReturn();
                 
                 mbr.setNo_return(rs.getString ("no_return"));
-                mbr.setNo_barang_masuk(rs.getString ("no_barang_masuk"));
+                mbr.setNo_referensi(rs.getString ("no_referensi"));
                 mbr.setTgl_return(rs.getString("tgl_return"));
+                mbr.setType(rs.getString("type"));
+                mbr.setAlasan(rs.getString("alasan"));
                                 
                 list.add(mbr);
             }

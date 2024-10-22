@@ -98,7 +98,7 @@ public class DAO_DetBarangKeluar implements Service_DetBarangKeluar{
         List list = new ArrayList();
         ResultSet rs = null;
         String sql ="SELECT det_keluar.no_keluar, det_keluar.kode_barang, "
-                + "brg.nama_barang, brg.harga, det_keluar.jml_keluar, "
+                + "brg.nama_barang, brg.harga, det_keluar.jml_keluar,brg.satuan, "
                 + "det_keluar.subtotal_keluar "
                 + "FROM detail_barang_keluar det_keluar "
                 + "INNER JOIN barang_keluar keluar ON keluar.no_keluar=det_keluar.no_keluar "
@@ -118,6 +118,7 @@ public class DAO_DetBarangKeluar implements Service_DetBarangKeluar{
                 brg.setKode_barang      (rs.getString ("kode_barang"));
                 brg.setNama_barang      (rs.getString ("nama_barang"));
                 brg.setHarga            (rs.getLong   ("harga"));
+                brg.setSatuan(rs.getString("satuan"));
                 det.setJml_keluar       (rs.getInt("jml_keluar"));
                 det.setSubtotal_keluar  (rs.getLong   ("subtotal_keluar"));
                                 

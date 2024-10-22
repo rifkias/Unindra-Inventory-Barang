@@ -11,10 +11,10 @@
  Target Server Version : 80039
  File Encoding         : 65001
 
- Date: 21/10/2024 22:13:24
+ Date: 23/10/2024 01:56:28
 */
 
-SET NAMES utf8;
+SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
@@ -37,8 +37,8 @@ CREATE TABLE `barang` (
 -- Records of barang
 -- ----------------------------
 BEGIN;
-INSERT INTO `barang` VALUES ('B2410001', 'JB001', 'Semen Tiga Roda', 'Zak', 30000, 60);
-INSERT INTO `barang` VALUES ('B2410002', 'JB001', 'Semen Putih Tiga Roda', 'Zak', 35000, 95);
+INSERT INTO `barang` VALUES ('B2410001', 'JB001', 'Semen Tiga Roda', 'Zak', 30000, 50);
+INSERT INTO `barang` VALUES ('B2410002', 'JB001', 'Semen Putih Tiga Roda', 'Zak', 35000, 90);
 INSERT INTO `barang` VALUES ('B2410003', 'JB001', 'Semen Holcim', 'Zak', 40000, 13);
 COMMIT;
 
@@ -60,6 +60,7 @@ CREATE TABLE `barang_keluar` (
 -- Records of barang_keluar
 -- ----------------------------
 BEGIN;
+INSERT INTO `barang_keluar` VALUES ('BK241023001', '2024-10-23', 460000, '1');
 COMMIT;
 
 -- ----------------------------
@@ -91,9 +92,11 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `barang_return`;
 CREATE TABLE `barang_return` (
-  `no_return` char(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `no_barang_masuk` char(12) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `no_return` char(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `no_referensi` char(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `tgl_return` date DEFAULT NULL,
+  `type` enum('MASUK','KELUAR') DEFAULT NULL,
+  `alasan` text,
   PRIMARY KEY (`no_return`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -101,6 +104,11 @@ CREATE TABLE `barang_return` (
 -- Records of barang_return
 -- ----------------------------
 BEGIN;
+INSERT INTO `barang_return` VALUES ('BRT241023001', 'BK241023001', '2024-10-23', 'KELUAR', 'test');
+INSERT INTO `barang_return` VALUES ('BRT241023002', 'BM241016001', '2024-10-23', 'MASUK', 'test');
+INSERT INTO `barang_return` VALUES ('BRT241023003', 'BM241016001', '2024-10-23', 'MASUK', 'test');
+INSERT INTO `barang_return` VALUES ('BRT241023004', 'BK241023001', '2024-10-23', 'KELUAR', '');
+INSERT INTO `barang_return` VALUES ('BRT241023005', 'BM241016001', '2024-10-23', 'MASUK', 'test');
 COMMIT;
 
 -- ----------------------------
@@ -108,9 +116,9 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `barang_rusak`;
 CREATE TABLE `barang_rusak` (
-  `no_barang_rusak` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `kode_barang` char(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `alasan` text CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `no_barang_rusak` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `kode_barang` char(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `alasan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `qty` int DEFAULT NULL,
   PRIMARY KEY (`no_barang_rusak`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -144,6 +152,8 @@ CREATE TABLE `detail_barang_keluar` (
 -- Records of detail_barang_keluar
 -- ----------------------------
 BEGIN;
+INSERT INTO `detail_barang_keluar` VALUES ('BK241023001', 'B2410003', 4, 160000);
+INSERT INTO `detail_barang_keluar` VALUES ('BK241023001', 'B2410001', 10, 300000);
 COMMIT;
 
 -- ----------------------------
@@ -175,18 +185,23 @@ COMMIT;
 DROP TABLE IF EXISTS `detail_barang_return`;
 CREATE TABLE `detail_barang_return` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `no_return` char(12) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `no_return` char(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `kode_barang` char(8) DEFAULT NULL,
   `qty` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `detail_barang_return_barang_return_FK` (`no_return`),
   CONSTRAINT `detail_barang_return_barang_return_FK` FOREIGN KEY (`no_return`) REFERENCES `barang_return` (`no_return`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of detail_barang_return
 -- ----------------------------
 BEGIN;
+INSERT INTO `detail_barang_return` VALUES (7, 'BRT241023001', 'B2410001', 2);
+INSERT INTO `detail_barang_return` VALUES (8, 'BRT241023002', 'B2410001', 2);
+INSERT INTO `detail_barang_return` VALUES (9, 'BRT241023003', 'B2410002', 22);
+INSERT INTO `detail_barang_return` VALUES (10, 'BRT241023004', 'B2410003', 4);
+INSERT INTO `detail_barang_return` VALUES (11, 'BRT241023005', 'B2410002', 5);
 COMMIT;
 
 -- ----------------------------
@@ -285,8 +300,8 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `pengangkutan`;
 CREATE TABLE `pengangkutan` (
-  `kode_pengangkut` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nama_pengangkut` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `kode_pengangkut` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nama_pengangkut` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`kode_pengangkut`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -384,6 +399,7 @@ CREATE TABLE `sementara_pesan` (
 -- Records of sementara_pesan
 -- ----------------------------
 BEGIN;
+INSERT INTO `sementara_pesan` VALUES ('B2410003', 'Semen Holcim', 'Zak', 40000, 13, 2, 80000, 'Sedang di pesan');
 COMMIT;
 
 -- ----------------------------
@@ -444,6 +460,35 @@ DROP TRIGGER IF EXISTS `barang_masuk`;
 delimiter ;;
 CREATE TRIGGER `barang_masuk` AFTER INSERT ON `detail_barang_masuk` FOR EACH ROW BEGIN
 	UPDATE barang SET stok = stok+NEW.jml_masuk
+    WHERE kode_barang = NEW.kode_barang;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Triggers structure for table detail_barang_return
+-- ----------------------------
+DROP TRIGGER IF EXISTS `recover_qty_return`;
+delimiter ;;
+CREATE TRIGGER `recover_qty_return` AFTER INSERT ON `detail_barang_return` FOR EACH ROW BEGIN
+    DECLARE typeReturn VARCHAR(10);
+    DECLARE qty INT;
+
+    -- Assign the typeReturn value using a SELECT INTO statement
+    SELECT type INTO typeReturn 
+    FROM barang_return 
+    WHERE no_return = NEW.no_return;
+
+    -- Use the IF condition to set the qty value
+    IF typeReturn = 'MASUK' THEN
+        SET qty = -1 * NEW.qty;
+    ELSE
+        SET qty = NEW.qty;
+    END IF;
+
+    -- Update the stok column in the barang table
+    UPDATE barang 
+    SET stok = stok + qty 
     WHERE kode_barang = NEW.kode_barang;
 END
 ;;
