@@ -347,6 +347,42 @@ public class DAO_Laporan implements Service_Laporan{
         }
     }
 
+    @Override
+    public void lapPengangkut(JPanel jp) {
+         try {
+                String reportPath = "src/com/inventory/report/LapDataPengiriman.jasper";
+                
+                HashMap<String, Object> parameters = new HashMap<>();
+               
+                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+                //tampil panel
+                jp.setLayout(new BorderLayout());
+                jp.repaint();
+                jp.add(new JRViewer(print));
+                jp.revalidate();
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(null, e.getMessage());
+        }
+    }
+
+    @Override
+    public void lapPengangkutDetail(JPanel jp) {
+         try {
+                String reportPath = "src/com/inventory/report/LapDetailPengiriman.jasper";
+                
+                HashMap<String, Object> parameters = new HashMap<>();
+               
+                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+                //tampil panel
+                jp.setLayout(new BorderLayout());
+                jp.repaint();
+                jp.add(new JRViewer(print));
+                jp.revalidate();
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(null, e.getMessage());
+        }
+    }
+
     
     
     

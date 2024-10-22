@@ -33,4 +33,7 @@ public interface Service_Laporan {
     void lapBarangKeluarPerPeriode     (JPanel jp, String tgl1, String tgl2);
     void lapBarangKeluarPerBulan       (JPanel jp, String dt1, int dt2);
     
+    void lapPengangkut(JPanel jp);
+    void lapPengangkutDetail(JPanel jp);
+    
 }
