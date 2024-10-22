@@ -283,7 +283,7 @@ public class Master_Barang extends javax.swing.JPanel {
         txtHarga.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
 
         cbxSatuan.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        cbxSatuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Jenis Satuan -", "Batang", "Kg", "Buah", "Roll", "Lembar", "Karton", "Zak", "Meter", "Kaleng", "Doss" }));
+        cbxSatuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Jenis Satuan -", "Batang", "Kg", "Buah", "Roll", "Lembar", "Karton", "Zak", "Meter", "Kaleng", "Doss", "Pcs" }));
 
         txtNamaBarang.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
 
