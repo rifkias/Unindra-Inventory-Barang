@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="89278281-d35e-4221-b15f-9ecce80d660c">
 	<property name="ireport.zoom" value="2.3579476910000032"/>
-	<property name="ireport.x" value="108"/>
+	<property name="ireport.x" value="174"/>
 	<property name="ireport.y" value="0"/>
 	<queryString>
 		<![CDATA[SELECT 
@@ -53,21 +53,21 @@ LEFT JOIN barang b on b.kode_barang = a.kode_barang]]>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[Kramat Jati - Jakarta Timur]]></text>
+				<text><![CDATA[Jl. AM Sangaji 38. Petojo Utara. Jakarta Pusat]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="119" y="41" width="331" height="28" uuid="c5c448c4-6f2e-4958-841e-408dda4e5ab7"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" isBold="false"/>
 				</textElement>
-				<text><![CDATA[PT.Prakasa Jaya Abadi]]></text>
+				<text><![CDATA[PT Anugrah Makmur Sentosa Abadi]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="119" y="89" width="331" height="20" uuid="346f6938-0ddb-469c-a4f8-f4a801c6626c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[HP. 0821 1178 1326]]></text>
+				<text><![CDATA[HP 0823 2878 6133]]></text>
 			</staticText>
 		</band>
 	</title>

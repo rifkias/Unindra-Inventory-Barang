@@ -14,6 +14,7 @@ public class Laporan_Barang extends javax.swing.JPanel {
         pn_main.setVisible(true);
         pn_dataBarang.setVisible(false);
         pn_transaksiBarang.setVisible(false);
+        pn_barangRusak.setVisible(false);
     }
     
     @SuppressWarnings("unchecked")
@@ -29,6 +30,9 @@ public class Laporan_Barang extends javax.swing.JPanel {
         pn_dataBarang = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         btnCetak = new javax.swing.JButton();
+        pn_barangRusak = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        btnCetak2 = new javax.swing.JButton();
         pn_transaksiBarang = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         btnCetak1 = new javax.swing.JButton();
@@ -48,7 +52,7 @@ public class Laporan_Barang extends javax.swing.JPanel {
         pn_pilihLaporan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cbxLaporan.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        cbxLaporan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih Jenis Laporan --", "Laporan Data Barang", "Laporan Transaksi Barang" }));
+        cbxLaporan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih Jenis Laporan --", "Laporan Data Barang", "Laporan Transaksi Barang", "Laporan Barang Rusak" }));
         cbxLaporan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxLaporanActionPerformed(evt);
@@ -106,6 +110,44 @@ public class Laporan_Barang extends javax.swing.JPanel {
         );
 
         pn_pilihLaporan.add(pn_dataBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 274, 160));
+
+        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Laporan Barang Rusak");
+
+        btnCetak2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnCetak2.setText("CETAK");
+        btnCetak2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCetak2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pn_barangRusakLayout = new javax.swing.GroupLayout(pn_barangRusak);
+        pn_barangRusak.setLayout(pn_barangRusakLayout);
+        pn_barangRusakLayout.setHorizontalGroup(
+            pn_barangRusakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_barangRusakLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pn_barangRusakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_barangRusakLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnCetak2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        pn_barangRusakLayout.setVerticalGroup(
+            pn_barangRusakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_barangRusakLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(btnCetak2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        pn_pilihLaporan.add(pn_barangRusak, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 274, 160));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -203,14 +245,22 @@ public class Laporan_Barang extends javax.swing.JPanel {
             pn_main.setVisible(true);
             pn_dataBarang.setVisible(false);
             pn_transaksiBarang.setVisible(false);
+        pn_barangRusak.setVisible(false);
         }else if(cbxLaporan.getSelectedItem()=="Laporan Data Barang"){
             pn_main.setVisible(false);
             pn_dataBarang.setVisible(true);
             pn_transaksiBarang.setVisible(false);
+            pn_barangRusak.setVisible(false);
         }else if(cbxLaporan.getSelectedItem()=="Laporan Transaksi Barang"){
             pn_main.setVisible(false);
             pn_dataBarang.setVisible(false);
             pn_transaksiBarang.setVisible(true);
+            pn_barangRusak.setVisible(false);
+        }else if(cbxLaporan.getSelectedItem()=="Laporan Barang Rusak"){
+            pn_main.setVisible(false);
+            pn_dataBarang.setVisible(false);
+            pn_transaksiBarang.setVisible(false);
+            pn_barangRusak.setVisible(true);
         }
     }//GEN-LAST:event_cbxLaporanActionPerformed
 
@@ -231,16 +281,25 @@ public class Laporan_Barang extends javax.swing.JPanel {
         servis_lap.lapTransaksiBarang(pn_tampilLaporan);
     }//GEN-LAST:event_btnCetak1ActionPerformed
 
+    private void btnCetak2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetak2ActionPerformed
+                                                
+        pn_tampilLaporan.removeAll();
+        servis_lap.lapBarangRusak(pn_tampilLaporan);
+    }//GEN-LAST:event_btnCetak2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnCetak;
     private javax.swing.JButton btnCetak1;
+    private javax.swing.JButton btnCetak2;
     private javax.swing.JComboBox<String> cbxLaporan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JPanel pn_barangRusak;
     private javax.swing.JPanel pn_dataBarang;
     private javax.swing.JPanel pn_main;
     private javax.swing.JPanel pn_pilihLaporan;

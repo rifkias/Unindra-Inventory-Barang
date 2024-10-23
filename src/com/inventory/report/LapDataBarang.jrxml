@@ -30,21 +30,21 @@ FROM
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" isBold="false"/>
 				</textElement>
-				<text><![CDATA[PT.Prakasa Jaya Abadi]]></text>
+				<text><![CDATA[PT Anugrah Makmur Sentosa Abadi]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="110" y="69" width="331" height="20" uuid="7e1e36de-e9e9-4e5d-bd0f-f7a320aa89b3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[Kramat Jati - Jakarta Timur]]></text>
+				<text><![CDATA[Jl. AM Sangaji 38. Petojo Utara. Jakarta Pusat]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="110" y="89" width="331" height="20" uuid="9d8f6c8f-cc4c-4dbd-b1ad-7cb990a4b895"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[HP. 0821 1178 1326]]></text>
+				<text><![CDATA[HP 0823 2878 6133]]></text>
 			</staticText>
 			<line>
 				<reportElement x="0" y="121" width="554" height="1" uuid="4371368f-c563-4a8c-bb5a-085b0b80f3aa"/>

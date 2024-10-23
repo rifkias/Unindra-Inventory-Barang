@@ -33,7 +33,7 @@ ORDER BY p2.kode_pengangkut]]>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" isBold="false"/>
 				</textElement>
-				<text><![CDATA[PT.Prakasa Jaya Abadi]]></text>
+				<text><![CDATA[PT Anugrah Makmur Sentosa Abadi]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="118" y="89" width="331" height="20" uuid="a8c56492-0bb5-4e3e-b1ba-1364b36d77a2"/>
@@ -47,7 +47,7 @@ ORDER BY p2.kode_pengangkut]]>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[Kramat Jati - Jakarta Timur]]></text>
+				<text><![CDATA[Jl. AM Sangaji 38. Petojo Utara. Jakarta Pusat]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="88" y="0" width="393" height="41" uuid="46757ca4-73e3-4a11-ac0d-9d32b25a8bee"/>

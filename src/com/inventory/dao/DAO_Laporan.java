@@ -21,370 +21,425 @@ import com.inventory.service.Service_Laporan;
  *
  * @author Uhnuy Kozuki
  */
-public class DAO_Laporan implements Service_Laporan{
+public class DAO_Laporan implements Service_Laporan {
 
     private Connection conn;
-    
-    public DAO_Laporan(){
+
+    public DAO_Laporan() {
         conn = Koneksi.getConnection();
     }
 
     @Override
     public void suratJalanPemesanan(String no) {
         try {
-                String reportPath = "src/com/inventory/report/SuratJalanPemesanan.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+            String reportPath = "src/com/inventory/report/SuratJalanPemesanan.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                JasperViewer viewer = new JasperViewer(print, false);
-                viewer.setVisible(true);
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            JasperViewer viewer = new JasperViewer(print, false);
+            viewer.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void transaksiBarangMasuk(String no) {
         try {
-                String reportPath = "src/com/inventory/report/TransaksiBarangMasuk.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+            String reportPath = "src/com/inventory/report/TransaksiBarangMasuk.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                JasperViewer viewer = new JasperViewer(print, false);
-                viewer.setVisible(true);
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            JasperViewer viewer = new JasperViewer(print, false);
+            viewer.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void transaksiBarangKeluar(String no) {
         try {
-                String reportPath = "src/com/inventory/report/TransaksiBarangKeluar.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+            String reportPath = "src/com/inventory/report/TransaksiBarangKeluar.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                JasperViewer viewer = new JasperViewer(print, false);
-                viewer.setVisible(true);
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            JasperViewer viewer = new JasperViewer(print, false);
+            viewer.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapDataBarang(JPanel jp) {
         try {
-                String reportPath = "src/com/inventory/report/LapDataBarang.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-               
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            String reportPath = "src/com/inventory/report/LapDataBarang.jasper";
+
+            HashMap<String, Object> parameters = new HashMap<>();
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapTransaksiBarang(JPanel jp) {
         try {
-                String reportPath = "src/com/inventory/report/LapStokBarang.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-               
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            String reportPath = "src/com/inventory/report/LapStokBarang.jasper";
+
+            HashMap<String, Object> parameters = new HashMap<>();
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapPemesananPerTransaksi(JPanel jp, String no) {
         try {
-                String reportPath = "src/com/inventory/report/LapPesanPerTransaksi.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+            String reportPath = "src/com/inventory/report/LapPesanPerTransaksi.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapPemesananPerPeriode(JPanel jp, String tgl1, String tgl2) {
         try {
-                String reportPath = "src/com/inventory/report/LapPesanPerPeriode.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("tgl1", tgl1);
-                parameters.put("tgl2", tgl2);
+            String reportPath = "src/com/inventory/report/LapPesanPerPeriode.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("tgl1", tgl1);
+            parameters.put("tgl2", tgl2);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapPemesananPerBulan(JPanel jp, String dt1, int dt2) {
         try {
-                String reportPath = "src/com/inventory/report/LapPesanPerPerbulan.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("dt1", dt1);
-                parameters.put("dt2", dt2);
+            String reportPath = "src/com/inventory/report/LapPesanPerPerbulan.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("dt1", dt1);
+            parameters.put("dt2", dt2);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapPemesananPerDistributor(JPanel jp, String id) {
         try {
-                String reportPath = "src/com/inventory/report/LapPesanPerDistributor.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("id", id);
+            String reportPath = "src/com/inventory/report/LapPesanPerDistributor.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("id", id);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapBarangMasukPerTransaksi(JPanel jp, String no) {
         try {
-                String reportPath = "src/com/inventory/report/TransaksiBarangMasuk.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+            String reportPath = "src/com/inventory/report/TransaksiBarangMasuk.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapBarangMasukPerPeriode(JPanel jp, String tgl1, String tgl2) {
         try {
-                String reportPath = "src/com/inventory/report/LapMasukPerPeriode.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("tgl1", tgl1);
-                parameters.put("tgl2", tgl2);
+            String reportPath = "src/com/inventory/report/LapMasukPerPeriode.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("tgl1", tgl1);
+            parameters.put("tgl2", tgl2);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapBarangMasukPerBulan(JPanel jp, String dt1, int dt2) {
         try {
-                String reportPath = "src/com/inventory/report/LapMasukPerPerbulan.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("dt1", dt1);
-                parameters.put("dt2", dt2);
+            String reportPath = "src/com/inventory/report/LapMasukPerPerbulan.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("dt1", dt1);
+            parameters.put("dt2", dt2);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapBarangMasukPerDistributor(JPanel jp, String id) {
         try {
-                String reportPath = "src/com/inventory/report/LapMasukPerDistributor.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("id", id);
+            String reportPath = "src/com/inventory/report/LapMasukPerDistributor.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("id", id);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapBarangKeluarPerTransaksi(JPanel jp, String no) {
         try {
-                String reportPath = "src/com/inventory/report/TransaksiBarangKeluar.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+            String reportPath = "src/com/inventory/report/TransaksiBarangKeluar.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapBarangKeluarPerPeriode(JPanel jp, String tgl1, String tgl2) {
         try {
-                String reportPath = "src/com/inventory/report/LapKeluarPerPeriode.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("tgl1", tgl1);
-                parameters.put("tgl2", tgl2);
+            String reportPath = "src/com/inventory/report/LapKeluarPerPeriode.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("tgl1", tgl1);
+            parameters.put("tgl2", tgl2);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapBarangKeluarPerBulan(JPanel jp, String dt1, int dt2) {
         try {
-                String reportPath = "src/com/inventory/report/LapKeluarPerPerbulan.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("dt1", dt1);
-                parameters.put("dt2", dt2);
+            String reportPath = "src/com/inventory/report/LapKeluarPerPerbulan.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("dt1", dt1);
+            parameters.put("dt2", dt2);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapPemesananPerPengangkut(JPanel jp, String id) {
-       try {
-                String reportPath = "src/com/inventory/report/LapPesanPerPengangkut.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("kode_pengangkut", id);
+        try {
+            String reportPath = "src/com/inventory/report/LapPesanPerPengangkut.jasper";
 
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("kode_pengangkut", id);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapPengangkut(JPanel jp) {
-         try {
-                String reportPath = "src/com/inventory/report/LapDataPengiriman.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-               
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+        try {
+            String reportPath = "src/com/inventory/report/LapDataPengiriman.jasper";
+
+            HashMap<String, Object> parameters = new HashMap<>();
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
     @Override
     public void lapPengangkutDetail(JPanel jp) {
-         try {
-                String reportPath = "src/com/inventory/report/LapDetailPengiriman.jasper";
-                
-                HashMap<String, Object> parameters = new HashMap<>();
-               
-                JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
-                //tampil panel
-                jp.setLayout(new BorderLayout());
-                jp.repaint();
-                jp.add(new JRViewer(print));
-                jp.revalidate();
-            } catch (Exception e) {
-                JOptionPane.showConfirmDialog(null, e.getMessage());
+        try {
+            String reportPath = "src/com/inventory/report/LapDetailPengiriman.jasper";
+
+            HashMap<String, Object> parameters = new HashMap<>();
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
         }
     }
 
-    
-    
-    
-    
+    @Override
+    public void lapBarangRusak(JPanel jp) {
+        try {
+            String reportPath = "src/com/inventory/report/LapBarangRusak.jasper";
+
+            HashMap<String, Object> parameters = new HashMap<>();
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
+        }
+    }
+
+    @Override
+    public void lapReturnPerBulan(JPanel jp, String dt1, int dt2) {
+        try {
+            String reportPath = "src/com/inventory/report/LapKeluarPerPeriode.jasper";
+
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("dt", dt1);
+            parameters.put("dt2", dt2);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
+        }
+    }
+
+    @Override
+    public void lapReturnPerPeriode(JPanel jp, String tgl1, String tgl2) {
+        try {
+            String reportPath = "src/com/inventory/report/LapReturnPerPeriode.jasper";
+
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("tgl1", tgl1);
+            parameters.put("tgl2", tgl2);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
+        }
+    }
+
+
 }

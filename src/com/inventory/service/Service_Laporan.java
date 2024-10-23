@@ -36,4 +36,8 @@ public interface Service_Laporan {
     void lapPengangkut(JPanel jp);
     void lapPengangkutDetail(JPanel jp);
     
+    void lapBarangRusak(JPanel jp);
+    void lapReturnPerBulan(JPanel jp,String dt1, int dt2);
+    void lapReturnPerPeriode(JPanel jp,String tgl1, String tgl2);
+    
 }

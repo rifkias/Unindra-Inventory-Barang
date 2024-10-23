@@ -24,6 +24,7 @@ import com.inventory.view.Laporan_BarangKeluar;
 import com.inventory.view.Laporan_BarangMasuk;
 import com.inventory.view.Laporan_Pemesanan;
 import com.inventory.view.Laporan_Pengangkut;
+import com.inventory.view.Laporan_Return;
 import com.inventory.view.Master_BarangRusak;
 import com.inventory.view.Master_Distributor;
 import com.inventory.view.Master_JenisBarang;
@@ -523,10 +524,20 @@ public class Menu_Utama extends javax.swing.JFrame {
                 pnMain.revalidate();
             }
         });
+        MenuItem laporanReturn = new MenuItem(null, true, iconBarangReturn, "Return", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pnMain.removeAll();
+                String Id = lb_id.getText();
+                pnMain.add(new Laporan_Return(Id));
+                pnMain.repaint();
+                pnMain.revalidate();
+            }
+        });
         
         MenuItem menuMaster      = new MenuItem(iconMaster, false, null, "Master", null, menuBarang,menuJenisBarang,menuDistributor, menuPengguna,menuPengangkut);
         MenuItem menuTransaksi   = new MenuItem(iconTransaksi, false, null, "Transaksi", null,transaksiPemesanan,transaksiBarangMasuk,transaksiBarangKeluar,transaksiBarangRusak,transaksiBarangReturn);
-        MenuItem menuReport      = new MenuItem(iconReport, false, null, "Report", null,laporanBarang,laporanPemesanan, laporanBarangMasuk, laporanBarangKeluar,laporanPengangkut);
+        MenuItem menuReport      = new MenuItem(iconReport, false, null, "Report", null,laporanBarang,laporanPemesanan, laporanBarangMasuk, laporanBarangKeluar,laporanPengangkut,laporanReturn);
         
         
         

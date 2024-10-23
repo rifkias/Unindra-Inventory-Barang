@@ -62,16 +62,16 @@ WHERE a.kode_pengangkut = $P{kode_pengangkut}]]>
 			<staticText>
 				<reportElement x="42" y="10" width="444" height="69" uuid="474c8d5b-54e0-48f4-9526-37fdb3d241e2"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="36" isBold="true"/>
+					<font size="24" isBold="true"/>
 				</textElement>
-				<text><![CDATA[PT. Prakasa Jaya Abadi]]></text>
+				<text><![CDATA[PT Anugrah Makmur Sentosa Abadi]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="120" y="79" width="331" height="20" uuid="087b7b5d-76e0-4588-850c-e88c253bff20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[Kramat Jati - Jakarta Timur]]></text>
+				<text><![CDATA[Jl. AM Sangaji 38. Petojo Utara. Jakarta Pusat]]></text>
 			</staticText>
 		</band>
 	</title>

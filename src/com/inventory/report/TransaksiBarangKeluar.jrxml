@@ -40,18 +40,18 @@ WHERE
 	<title>
 		<band height="129" splitType="Stretch">
 			<staticText>
-				<reportElement x="110" y="0" width="331" height="69" uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e"/>
+				<reportElement x="77" y="0" width="434" height="69" uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="24" isBold="true"/>
 				</textElement>
-				<text><![CDATA[PT. Prakasa Jaya Abadi]]></text>
+				<text><![CDATA[PT Anugrah Makmur Sentosa Abadi]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="110" y="69" width="331" height="20" uuid="7e1e36de-e9e9-4e5d-bd0f-f7a320aa89b3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[Kramat Jati - Jakarta Timur]]></text>
+				<text><![CDATA[Jl. AM Sangaji 38. Petojo Utara. Jakarta Pusat]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="110" y="89" width="331" height="20" uuid="9d8f6c8f-cc4c-4dbd-b1ad-7cb990a4b895"/>
