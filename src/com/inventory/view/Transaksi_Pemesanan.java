@@ -331,6 +331,7 @@ public class Transaksi_Pemesanan extends javax.swing.JPanel {
         jLabel10.setText("Tambah Pemesanan Barang");
 
         jScrollPane2.setBorder(null);
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(1098, 600));
 
         jPanel3.setBackground(new java.awt.Color(250, 250, 250));
 
@@ -722,7 +723,7 @@ public class Transaksi_Pemesanan extends javax.swing.JPanel {
             .addGroup(tambahDataLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tambahDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(tambahDataLayout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -749,8 +750,8 @@ public class Transaksi_Pemesanan extends javax.swing.JPanel {
                         .addComponent(btnBatal1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lbTotalPesan)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         mainPanel.add(tambahData, "card4");
