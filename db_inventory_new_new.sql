@@ -14,7 +14,7 @@
  Date: 23/10/2024 01:56:28
 */
 
-SET NAMES utf8mb4;
+SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
@@ -92,8 +92,8 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `barang_return`;
 CREATE TABLE `barang_return` (
-  `no_return` char(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `no_referensi` char(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `no_return` char(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `no_referensi` char(12) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `tgl_return` date DEFAULT NULL,
   `type` enum('MASUK','KELUAR') DEFAULT NULL,
   `alasan` text,
@@ -116,9 +116,9 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `barang_rusak`;
 CREATE TABLE `barang_rusak` (
-  `no_barang_rusak` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `kode_barang` char(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `alasan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `no_barang_rusak` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `kode_barang` char(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `alasan` text CHARACTER SET utf8 COLLATE utf8_general_ci,
   `qty` int DEFAULT NULL,
   PRIMARY KEY (`no_barang_rusak`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -185,13 +185,13 @@ COMMIT;
 DROP TABLE IF EXISTS `detail_barang_return`;
 CREATE TABLE `detail_barang_return` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `no_return` char(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `no_return` char(12) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `kode_barang` char(8) DEFAULT NULL,
   `qty` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `detail_barang_return_barang_return_FK` (`no_return`),
   CONSTRAINT `detail_barang_return_barang_return_FK` FOREIGN KEY (`no_return`) REFERENCES `barang_return` (`no_return`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- ----------------------------
 -- Records of detail_barang_return
@@ -300,8 +300,8 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `pengangkutan`;
 CREATE TABLE `pengangkutan` (
-  `kode_pengangkut` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `nama_pengangkut` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `kode_pengangkut` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `nama_pengangkut` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`kode_pengangkut`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
