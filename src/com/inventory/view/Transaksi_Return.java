@@ -854,7 +854,7 @@ public class Transaksi_Return extends javax.swing.JPanel {
     private void btnCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetakActionPerformed
         int row = tblData.getSelectedRow();
         String no = tblData.getModel().getValueAt(row, 1).toString();
-        servis_lap.suratJalanPemesanan(no);
+        servis_lap.lapReturnCetak(no);
     }//GEN-LAST:event_btnCetakActionPerformed
 
     private void txtCariKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCariKeyReleased

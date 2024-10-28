@@ -100,7 +100,7 @@ public class DAO_BarangMasuk implements Service_BarangMasuk{
         PreparedStatement st = null;
         List list = new ArrayList();
         ResultSet rs = null;
-        String sql ="SELECT * FROM barang_masuk";
+        String sql ="SELECT bm.no_masuk,bm.tgl_masuk,bm.total_masuk,bm.id_distributor,bm.id_pengguna,p2.nama_pengguna FROM barang_masuk bm left join pengguna p2 on bm.id_pengguna = p2.id_pengguna";
         try {
             st = conn.prepareStatement(sql);
             rs = st.executeQuery();
@@ -114,6 +114,7 @@ public class DAO_BarangMasuk implements Service_BarangMasuk{
                 masuk.setTotal_masuk    (rs.getLong("total_masuk"));
                 dst.setId_distributor   (rs.getString("id_distributor"));
                 pgn.setId_pengguna      (rs.getString("id_pengguna"));
+                pgn.setNama_pengguna(rs.getString("nama_pengguna"));
                                 
                 masuk.setMod_distributor(dst);
                 masuk.setMod_pengguna(pgn);

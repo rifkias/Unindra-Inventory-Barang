@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c500b4ff-1e9a-4993-8051-30feae79b19a">
-	<property name="ireport.zoom" value="1.7715610000000015"/>
+	<property name="ireport.zoom" value="1.7715610000000017"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<queryString language="SQL">
-		<![CDATA[SELECT a.kode_pengangkut,a.nama_pengangkut,count(p.no_pesan) FROM pengangkutan a LEFT JOIN pemesanan p on a.kode_pengangkut = p.id_pengangkutan GROUP BY a.kode_pengangkut, a.nama_pengangkut]]>
+	<parameter name="tgl1" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2024-10-20"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tgl2" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2024-10-24"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT a.kode_pengangkut,a.nama_pengangkut,count(p.no_pesan) as total FROM pengangkutan a LEFT JOIN pemesanan p on a.kode_pengangkut = p.id_pengangkutan WHERE p.tgl_pesan BETWEEN $P{tgl1} and $P{tgl2} GROUP BY a.kode_pengangkut, a.nama_pengangkut]]>
 	</queryString>
 	<field name="kode_pengangkut" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -12,44 +18,88 @@
 	<field name="nama_pengangkut" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="count(p.no_pesan)" class="java.lang.Long"/>
+	<field name="total" class="java.lang.Long"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
 		<band height="124" splitType="Stretch">
 			<staticText>
-				<reportElement x="113" y="99" width="331" height="20" uuid="3e66434f-e6e6-4ac5-8f91-958448fca2c7"/>
+				<reportElement x="79" y="99" width="385" height="20" uuid="3e66434f-e6e6-4ac5-8f91-958448fca2c7"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[HP 0823 2878 6133]]></text>
+				<text><![CDATA[HP. 0821 1178 1326]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="113" y="10" width="331" height="41" uuid="9f8fa2a3-f99f-4f67-8453-2aa556175cf3"/>
+				<reportElement x="79" y="10" width="385" height="41" uuid="9f8fa2a3-f99f-4f67-8453-2aa556175cf3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="28" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Laporan Pengiriman]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="87" y="51" width="372" height="28" uuid="75e953a6-db5a-44e7-9223-dafee10c177a"/>
+				<reportElement x="79" y="51" width="385" height="28" uuid="75e953a6-db5a-44e7-9223-dafee10c177a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" isBold="false"/>
 				</textElement>
 				<text><![CDATA[PT Anugrah Makmur Sentosa Abadi]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="113" y="79" width="331" height="20" uuid="fa5c6077-82e9-4676-a3cb-68253b43bc69"/>
+				<reportElement x="79" y="79" width="385" height="20" uuid="fa5c6077-82e9-4676-a3cb-68253b43bc69"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[Jl. AM Sangaji 38. Petojo Utara. Jakarta Pusat]]></text>
+				<text><![CDATA[Jl. AM Sangaji 38. Petojo Utara. Jakarta Pusat.]]></text>
 			</staticText>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="91" splitType="Stretch">
+			<textField>
+				<reportElement x="386" y="50" width="100" height="20" uuid="cc384b4b-5053-4036-a0d7-eb99fe44c17f"/>
+				<textFieldExpression><![CDATA[$P{tgl2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="50" width="100" height="20" uuid="0fef9d3d-4779-460e-9b9e-a6913c2f6185"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Dari Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="10" width="23" height="20" uuid="7b4e829c-f3e9-45bd-8dc0-66b0618c7dd6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="50" width="100" height="20" uuid="74f98f87-37d9-4a53-a783-580f4743b747"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Sampai Tanggal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="50" width="100" height="20" uuid="5944d9dc-2a1c-490f-bc37-2f6bc3424068"/>
+				<textFieldExpression><![CDATA[$P{tgl1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="10" width="100" height="20" uuid="09079099-c8d4-4bde-bbd1-2a0e21a07879"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Hal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="10" width="185" height="20" uuid="7d07b541-998a-4120-abc0-6a6971f235f9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Laporan  Pengiriman]]></text>
+			</staticText>
+		</band>
 	</pageHeader>
 	<columnHeader>
 		<band height="20" splitType="Stretch">
@@ -125,7 +175,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{count(p.no_pesan)}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="145" y="0" width="131" height="20" uuid="0ab4c2bc-b82a-4fcb-8bef-01630fd64569"/>

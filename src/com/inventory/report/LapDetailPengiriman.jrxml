@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dcbb58ce-f0b3-4f75-86a4-127df423074f">
 	<property name="ireport.zoom" value="1.771561000000002"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="43"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT 
@@ -29,21 +29,21 @@ ORDER BY p2.kode_pengangkut]]>
 	<title>
 		<band height="127" splitType="Stretch">
 			<staticText>
-				<reportElement x="118" y="41" width="331" height="28" uuid="74a6f3bf-dd8a-4c6f-95d1-6ae87a8278bf"/>
+				<reportElement x="88" y="41" width="393" height="28" uuid="74a6f3bf-dd8a-4c6f-95d1-6ae87a8278bf"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" isBold="false"/>
 				</textElement>
 				<text><![CDATA[PT Anugrah Makmur Sentosa Abadi]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="118" y="89" width="331" height="20" uuid="a8c56492-0bb5-4e3e-b1ba-1364b36d77a2"/>
+				<reportElement x="88" y="89" width="393" height="20" uuid="a8c56492-0bb5-4e3e-b1ba-1364b36d77a2"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
 				<text><![CDATA[HP. 0821 1178 1326]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="118" y="69" width="331" height="20" uuid="51acd727-f142-4c9a-87f6-d6065c4a1a97"/>
+				<reportElement x="88" y="69" width="393" height="20" uuid="51acd727-f142-4c9a-87f6-d6065c4a1a97"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>

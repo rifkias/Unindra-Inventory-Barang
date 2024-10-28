@@ -84,7 +84,7 @@ public class DAO_Pemesanan implements Service_Pemesanan{
         PreparedStatement st = null;
         List list = new ArrayList();
         ResultSet rs = null;
-        String sql ="SELECT * FROM pemesanan";
+        String sql ="SELECT p.no_pesan, p.tgl_pesan, p.total_pesan, p.id_distributor, p.id_pengguna, p.id_pengangkutan, p2.nama_pengangkut,p3.nama_pengguna FROM pemesanan p left join pengangkutan p2 on p.id_pengangkutan = p2.kode_pengangkut left join pengguna p3 on p.id_pengguna = p3.id_pengguna";
         try {
             st = conn.prepareStatement(sql);
             rs = st.executeQuery();
@@ -99,7 +99,10 @@ public class DAO_Pemesanan implements Service_Pemesanan{
                 psn.setTotal_pesan(rs.getLong("total_pesan"));
                 dst.setId_distributor(rs.getString("id_distributor"));
                 pgn.setId_pengguna(rs.getString("id_pengguna"));
+                pgn.setNama_pengguna(rs.getString("nama_pengguna"));
                 png.setKode_pengangkut(rs.getString("id_pengangkutan"));
+                png.setNama_pengangkut(rs.getString("nama_pengangkut"));
+                
                                 
                 psn.setMod_distributor(dst);
                 psn.setMod_pengguna(pgn);

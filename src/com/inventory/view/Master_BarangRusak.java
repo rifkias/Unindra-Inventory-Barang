@@ -68,7 +68,6 @@ public class Master_BarangRusak extends javax.swing.JPanel {
         btnTambah = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
         btnBatal = new javax.swing.JButton();
-        btnCetak = new javax.swing.JButton();
         txtCari = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -129,14 +128,6 @@ public class Master_BarangRusak extends javax.swing.JPanel {
             }
         });
 
-        btnCetak.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        btnCetak.setText("CETAK");
-        btnCetak.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCetakActionPerformed(evt);
-            }
-        });
-
         txtCari.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         txtCari.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -183,8 +174,6 @@ public class Master_BarangRusak extends javax.swing.JPanel {
                         .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCetak, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -204,11 +193,10 @@ public class Master_BarangRusak extends javax.swing.JPanel {
                     .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCetak, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -409,15 +397,6 @@ public class Master_BarangRusak extends javax.swing.JPanel {
         loadData();
     }//GEN-LAST:event_btnBatalActionPerformed
 
-    private void btnCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetakActionPerformed
-        JFileChooser fileChooser = new JFileChooser();
-        int option = fileChooser.showSaveDialog(null);
-        if (option == JFileChooser.APPROVE_OPTION) {
-                String filePath = fileChooser.getSelectedFile().getAbsolutePath() + ".xlsx";
-                servis.exportToExcel(tblData, filePath);
-            }
-    }//GEN-LAST:event_btnCetakActionPerformed
-
     private void txtCariKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCariKeyReleased
         pencarian();
     }//GEN-LAST:event_txtCariKeyReleased
@@ -430,7 +409,6 @@ public class Master_BarangRusak extends javax.swing.JPanel {
         }
         btnHapus.setVisible(true);
         btnBatal.setVisible(true);
-        btnCetak.setVisible(true);
     }//GEN-LAST:event_tblDataMouseClicked
 
     private void btnTambah1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambah1ActionPerformed
@@ -462,7 +440,6 @@ public class Master_BarangRusak extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnBatal1;
-    private javax.swing.JButton btnCetak;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnTambah;
     private javax.swing.JButton btnTambah1;
@@ -521,7 +498,6 @@ public class Master_BarangRusak extends javax.swing.JPanel {
     private void loadData() {
         btnHapus.setVisible(false);
         btnBatal.setVisible(false);
-        btnCetak.setVisible(false);
         List<Model_BarangRusak> list = servis.getData();
         tblModel.setData(list);
     }

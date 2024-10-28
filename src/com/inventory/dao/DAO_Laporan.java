@@ -32,7 +32,8 @@ public class DAO_Laporan implements Service_Laporan {
     @Override
     public void suratJalanPemesanan(String no) {
         try {
-            String reportPath = "src/com/inventory/report/SuratJalanPemesanan.jasper";
+//            String reportPath = "src/com/inventory/report/SuratJalanPemesanan.jasper";
+            String reportPath = "src/com/inventory/report/LapPesanPerTransaksi.jasper";
 
             HashMap<String, Object> parameters = new HashMap<>();
             parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
@@ -425,6 +426,42 @@ public class DAO_Laporan implements Service_Laporan {
     public void lapReturnPerPeriode(JPanel jp, String tgl1, String tgl2) {
         try {
             String reportPath = "src/com/inventory/report/LapReturnPerPeriode.jasper";
+
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("tgl1", tgl1);
+            parameters.put("tgl2", tgl2);
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            //tampil panel
+            jp.setLayout(new BorderLayout());
+            jp.repaint();
+            jp.add(new JRViewer(print));
+            jp.revalidate();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
+        }
+    }
+
+    @Override
+    public void lapReturnCetak(String no) {
+           try {
+//            String reportPath = "src/com/inventory/report/SuratJalanPemesanan.jasper";
+            String reportPath = "src/com/inventory/report/LapReturnPerTransaksi.jasper";
+
+            HashMap<String, Object> parameters = new HashMap<>();
+            parameters.put("no", no); // Menyimpan nomor pemesanan sebagai parameter
+
+            JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
+            JasperViewer viewer = new JasperViewer(print, false);
+            viewer.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage());
+        }
+    }
+
+    @Override
+    public void lapPengangkutPeriode(JPanel jp, String tgl1, String tgl2) {      try {
+            String reportPath = "src/com/inventory/report/LapDataPengirimanPerPeriode.jasper";
 
             HashMap<String, Object> parameters = new HashMap<>();
             parameters.put("tgl1", tgl1);

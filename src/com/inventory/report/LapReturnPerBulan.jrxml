@@ -4,10 +4,10 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="dt" class="java.lang.String">
-		<defaultValueExpression><![CDATA[10]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["10"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="dt2" class="java.lang.String">
-		<defaultValueExpression><![CDATA[2024]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["2024"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT

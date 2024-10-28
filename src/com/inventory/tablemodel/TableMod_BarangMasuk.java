@@ -62,7 +62,7 @@ public class TableMod_BarangMasuk extends AbstractTableModel {
         return list.size();
     }
 
-    private final String[] columnNames = {"No", "No Masuk", "Tanggal Masuk", "Total Masuk", "ID Distributor", "ID Pengguna"};
+    private final String[] columnNames = {"No", "No Masuk", "Tanggal Masuk", "Total Masuk", "ID Distributor", "Nama Pengguna"};
     
     @Override
     public int getColumnCount() {
@@ -79,7 +79,7 @@ public class TableMod_BarangMasuk extends AbstractTableModel {
                 case 1: return list.get(rowIndex).getTgl_masuk();
                 case 2: return list.get(rowIndex).getTotal_masuk();
                 case 3: return list.get(rowIndex).getMod_distributor().getId_distributor();
-                case 4: return list.get(rowIndex).getMod_pengguna().getId_pengguna();
+                case 4: return list.get(rowIndex).getMod_pengguna().getNama_pengguna();
 
                 default: return null;
             }
