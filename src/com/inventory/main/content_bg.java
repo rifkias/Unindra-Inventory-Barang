@@ -31,8 +31,6 @@ public class content_bg extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         gambar = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
 
         setLayout(new java.awt.CardLayout());
 
@@ -41,41 +39,29 @@ public class content_bg extends javax.swing.JPanel {
         gambar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         gambar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inventory/img/Menu_Utama.png"))); // NOI18N
 
-        logo.setFont(new java.awt.Font("BlackJack", 3, 48)); // NOI18N
+        logo.setFont(new java.awt.Font("BlackJack", 3, 24)); // NOI18N
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo.setText("Kelompok 4");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("1. Dean Pratama Putra \t\t202143500783\n2. Martha Nur Hanifah \t\t202143500790\n3. Millennanda dwi cahya \t\t202143500753\n4. M. Jailani Algi Fahri \t\t202143500709\n5. M Akbar Gymnastiar \t\t202143500810\n6. Moses Sitorus Pane \t\t202143500741\n7. Ahmad Fahri \t\t202143500787");
-        jScrollPane1.setViewportView(jTextArea1);
+        logo.setText("PT ANUGRAH MAKMUR SENTOSA ABADI");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(536, Short.MAX_VALUE)
                 .addComponent(gambar)
                 .addGap(44, 44, 44))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 1305, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gambar, javax.swing.GroupLayout.DEFAULT_SIZE, 928, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(216, 216, 216)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gambar, javax.swing.GroupLayout.DEFAULT_SIZE, 832, Short.MAX_VALUE))
         );
 
         add(jPanel1, "card2");
@@ -85,8 +71,6 @@ public class content_bg extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel gambar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel logo;
     // End of variables declaration//GEN-END:variables
 }

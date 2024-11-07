@@ -15,7 +15,7 @@ public class Koneksi {
             try {
                 String url = "jdbc:mysql://localhost:3306/db_inventory_new";
                 String user ="root";
-                String pass = "[password]";
+                String pass = "";
                 DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
                 connection = (Connection) DriverManager.getConnection(url, user, pass);
             } catch (SQLException ex) {
