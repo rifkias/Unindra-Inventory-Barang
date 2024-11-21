@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2e67d95d-49d8-4b00-a83f-335999388b8a">
-	<property name="ireport.zoom" value="1.7715610000000017"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="2e67d95d-49d8-4b00-a83f-335999388b8a">
+	<property name="ireport.zoom" value="1.4641000000000013"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="tgl1" class="java.lang.String">
@@ -49,12 +49,16 @@ GROUP BY noReturn,tipe,noReferensi,tglReturn]]>
 				<text><![CDATA[Jl. AM Sangaji 38. Petojo Utara. Jakarta Pusat]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="53" y="0" width="433" height="69" uuid="d5b6098b-7670-472a-8ed9-4f50e965bbe7"/>
+				<reportElement x="81" y="0" width="394" height="69" uuid="d5b6098b-7670-472a-8ed9-4f50e965bbe7"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="24" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PT Anugrah Makmur Sentosa Abadi]]></text>
 			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="1" y="10" width="91" height="89" uuid="0d90995a-fdbf-4dd4-aaa2-ff8c6c5fcbe4"/>
+				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -281,7 +285,20 @@ GROUP BY noReturn,tipe,noReferensi,tglReturn]]>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="126" splitType="Stretch">
+			<staticText>
+				<reportElement x="344" y="10" width="42" height="15" uuid="006f5a3f-31e6-410d-9c3c-97030f2ae37d"/>
+				<text><![CDATA[Jakarta, ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="386" y="10" width="100" height="15" uuid="f36aa281-06a8-4cdb-93bb-7b36f7829106"/>
+				<textFieldExpression><![CDATA[new java.util.Date().format("dd-MM-yyyy")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="344" y="73" width="115" height="15" uuid="1c5da0d4-d919-424e-a918-1b9e88393aa6"/>
+				<text><![CDATA[Millenanda Dwi Cahya]]></text>
+			</staticText>
+		</band>
 	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch"/>

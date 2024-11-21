@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0102192e-ff88-412d-9f09-45c0440f1ca8">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="0102192e-ff88-412d-9f09-45c0440f1ca8">
 	<property name="ireport.zoom" value="1.331000000000009"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -56,6 +56,14 @@ FROM
 				</textElement>
 				<text><![CDATA[Laporan Data Barang]]></text>
 			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="-370" y="10" width="91" height="89" uuid="94e6af53-3156-43b5-b719-3d8fb2902ec1"/>
+				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="28" y="0" width="91" height="89" uuid="9af1f68c-82f5-47f5-afec-41b9d27189a6"/>
+				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -266,7 +274,20 @@ FROM
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="15" splitType="Stretch"/>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="399" y="0" width="42" height="15" uuid="b7cfdac5-c89d-4ccf-9062-4d92e9368e0d"/>
+				<text><![CDATA[Jakarta, ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="441" y="0" width="100" height="15" uuid="ae9224ac-5ff8-44fc-bd8f-97590ee4bc8b"/>
+				<textFieldExpression><![CDATA[new java.util.Date().format("dd-MM-yyyy")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="399" y="63" width="115" height="15" uuid="8dd145f8-2757-45a5-a78d-9b4bf5d4eec2"/>
+				<text><![CDATA[Millenanda Dwi Cahya]]></text>
+			</staticText>
+		</band>
 	</columnFooter>
 	<pageFooter>
 		<band height="13" splitType="Stretch"/>

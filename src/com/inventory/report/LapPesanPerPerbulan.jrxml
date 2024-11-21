@@ -35,7 +35,7 @@ WHERE
 	<title>
 		<band height="129" splitType="Stretch">
 			<staticText>
-				<reportElement x="48" y="0" width="444" height="69" uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e"/>
+				<reportElement x="62" y="0" width="414" height="69" uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="24" isBold="true"/>
 				</textElement>
@@ -58,6 +58,10 @@ WHERE
 			<line>
 				<reportElement x="0" y="121" width="554" height="1" uuid="4371368f-c563-4a8c-bb5a-085b0b80f3aa"/>
 			</line>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="1" y="10" width="91" height="89" uuid="0d90995a-fdbf-4dd4-aaa2-ff8c6c5fcbe4"/>
+				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -290,7 +294,7 @@ WHERE
 		<band height="13" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="71" splitType="Stretch">
+		<band height="176" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="451" height="20" uuid="ecd145d2-15c1-48e5-9cfd-cda9522cb88c"/>
 				<box>
@@ -318,6 +322,18 @@ WHERE
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{Total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="350" y="83" width="115" height="15" uuid="047d2298-2050-4919-8075-2a0b989c1c02"/>
+				<text><![CDATA[Millenanda Dwi Cahya]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="20" width="42" height="15" uuid="d4376518-72d2-42b0-a97e-d21144a0602d"/>
+				<text><![CDATA[Jakarta, ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="392" y="20" width="100" height="15" uuid="6ebcc1f9-94f7-49bd-9685-e79b5c0c584e"/>
+				<textFieldExpression><![CDATA[new java.util.Date().format("dd-MM-yyyy")]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
