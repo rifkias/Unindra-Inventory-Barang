@@ -15,7 +15,7 @@
 		<text textAlignment="Center" verticalAlignment="Middle" textHeight="25.15625" lineSpacingFactor="1.2578125" leadingOffset="-4.3945312">
 			<reportElement uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e" x="130" y="61" width="331" height="28" origin="1" srcId="1" printId="1"/>
 			<font size="20" isBold="false"/>
-			<textContent><![CDATA[PT. Prakasa Jaya Abadi]]></textContent>
+			<textContent><![CDATA[PT. Anugrah Makmur Sentosa Abadi]]></textContent>
 		</text>
 		<text textAlignment="Center" verticalAlignment="Middle" textHeight="17.609375" lineSpacingFactor="1.2578125" leadingOffset="-3.0761719">
 			<reportElement uuid="7e1e36de-e9e9-4e5d-bd0f-f7a320aa89b3" x="130" y="89" width="331" height="20" origin="1" srcId="2" printId="1"/>

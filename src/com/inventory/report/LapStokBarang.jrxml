@@ -41,7 +41,7 @@ FROM
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="24" isBold="true"/>
 				</textElement>
-				<text><![CDATA[PT. Prakasa Jaya Abadi]]></text>
+				<text><![CDATA[PT. Anugrah Makmur Sentosa Abadi]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="110" y="32" width="568" height="31" uuid="7e1e36de-e9e9-4e5d-bd0f-f7a320aa89b3"/>

@@ -122,7 +122,7 @@ public class Menu_Utama extends javax.swing.JFrame {
         pnMain = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Tugas Pemrograman Visual");
+        setTitle("Sistem Inventory");
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/com/inventory/img/icons8_depot_512px.png")).getImage());
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -277,6 +277,8 @@ public class Menu_Utama extends javax.swing.JFrame {
         );
 
         getContentPane().add(pn_content, java.awt.BorderLayout.CENTER);
+
+        getAccessibleContext().setAccessibleName("Sistem Inventory");
 
         setSize(new java.awt.Dimension(859, 604));
         setLocationRelativeTo(null);
