@@ -67,7 +67,7 @@ WHERE
 				<reportElement x="0" y="121" width="554" height="1" uuid="4371368f-c563-4a8c-bb5a-085b0b80f3aa"/>
 			</line>
 			<image hAlign="Center" vAlign="Middle">
-				<reportElement x="1" y="10" width="91" height="89" uuid="0d90995a-fdbf-4dd4-aaa2-ff8c6c5fcbe4"/>
+				<reportElement x="0" y="10" width="53" height="59" uuid="0d90995a-fdbf-4dd4-aaa2-ff8c6c5fcbe4"/>
 				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
 			</image>
 		</band>

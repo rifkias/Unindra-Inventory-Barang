@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0102192e-ff88-412d-9f09-45c0440f1ca8">
-	<property name="ireport.zoom" value="1.4641000000000095"/>
+	<property name="ireport.zoom" value="1.100000000000007"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="tgl1" class="java.lang.String">
@@ -35,7 +35,7 @@ WHERE
 	<title>
 		<band height="129" splitType="Stretch">
 			<staticText>
-				<reportElement x="67" y="0" width="419" height="69" uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e"/>
+				<reportElement x="100" y="0" width="416" height="69" uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="24" isBold="true"/>
 				</textElement>
@@ -58,8 +58,8 @@ WHERE
 			<line>
 				<reportElement x="0" y="121" width="554" height="1" uuid="4371368f-c563-4a8c-bb5a-085b0b80f3aa"/>
 			</line>
-			<image hAlign="Center" vAlign="Middle">
-				<reportElement x="1" y="10" width="91" height="89" uuid="0d90995a-fdbf-4dd4-aaa2-ff8c6c5fcbe4"/>
+			<image>
+				<reportElement x="0" y="19" width="100" height="50" uuid="b2037639-d518-4319-98a5-0db025925c11"/>
 				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
 			</image>
 		</band>
@@ -294,7 +294,7 @@ WHERE
 		<band height="13" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="158" splitType="Stretch">
+		<band height="71" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="451" height="20" uuid="ecd145d2-15c1-48e5-9cfd-cda9522cb88c"/>
 				<box>
@@ -324,15 +324,15 @@ WHERE
 				<textFieldExpression><![CDATA[$V{Total}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="376" y="83" width="115" height="15" uuid="dfd3d7a9-fc9c-49fc-aead-8750683fcccb"/>
+				<reportElement x="401" y="56" width="115" height="15" uuid="b85ce4b3-bc08-48b7-9087-17f32c973a8b"/>
 				<text><![CDATA[Millenanda Dwi Cahya]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="376" y="20" width="42" height="15" uuid="f89ab4b3-174f-4ff3-b30b-8b265ae49061"/>
+				<reportElement x="399" y="31" width="42" height="15" uuid="34cff742-b068-4e65-b384-73a929355f00"/>
 				<text><![CDATA[Jakarta, ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="418" y="20" width="100" height="15" uuid="3e384e8e-87e3-4aa2-a27a-50dff14b32bd"/>
+				<reportElement x="441" y="31" width="100" height="15" uuid="a0ea14ee-c307-4a56-9fbc-74f5e18153c5"/>
 				<textFieldExpression><![CDATA[new java.util.Date().format("dd-MM-yyyy")]]></textFieldExpression>
 			</textField>
 		</band>

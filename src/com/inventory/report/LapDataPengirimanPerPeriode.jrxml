@@ -52,9 +52,9 @@
 				</textElement>
 				<text><![CDATA[Jl. AM Sangaji 38. Petojo Utara. Jakarta Pusat.]]></text>
 			</staticText>
-			<image hAlign="Center" vAlign="Middle">
-				<reportElement x="10" y="10" width="91" height="89" uuid="0d90995a-fdbf-4dd4-aaa2-ff8c6c5fcbe4"/>
-				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
+			<image>
+				<reportElement x="66" y="42" width="79" height="57" uuid="4db6a43e-c15c-4f8a-94c2-1bf07c93b68a"/>
+				<imageExpression><![CDATA["/home/rifki-alfariz-shidiq/Documents/Data/Java/AppInventory/src/com/inventory/img/Logo.jpeg"]]></imageExpression>
 			</image>
 		</band>
 	</title>

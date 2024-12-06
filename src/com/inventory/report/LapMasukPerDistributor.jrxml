@@ -47,7 +47,7 @@ WHERE
 	<title>
 		<band height="129" splitType="Stretch">
 			<staticText>
-				<reportElement x="58" y="25" width="423" height="44" uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e"/>
+				<reportElement x="100" y="0" width="423" height="69" uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="24" isBold="true"/>
 				</textElement>
@@ -65,13 +65,13 @@ WHERE
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[HP 0823 2878 6133]]></text>
+				<text><![CDATA[HP. 0823 2878 6133]]></text>
 			</staticText>
 			<line>
 				<reportElement x="0" y="121" width="554" height="1" uuid="4371368f-c563-4a8c-bb5a-085b0b80f3aa"/>
 			</line>
-			<image hAlign="Center" vAlign="Middle">
-				<reportElement x="1" y="10" width="91" height="89" uuid="0d90995a-fdbf-4dd4-aaa2-ff8c6c5fcbe4"/>
+			<image hAlign="Center">
+				<reportElement x="10" y="19" width="90" height="50" uuid="26df5975-3e4b-43d1-a896-dd58e22c03df"/>
 				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
 			</image>
 		</band>
@@ -361,7 +361,7 @@ WHERE
 		<band height="13" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="241" splitType="Stretch">
+		<band height="71" splitType="Stretch">
 			<textField pattern="###0">
 				<reportElement x="454" y="0" width="100" height="20" uuid="e8ff3f4f-e271-43db-a1a5-be35efabe624"/>
 				<box>
@@ -391,15 +391,15 @@ WHERE
 				<text><![CDATA[Total     ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="366" y="83" width="115" height="15" uuid="065f088a-10cd-455a-9ff7-4e9009a7e85c"/>
-				<text><![CDATA[Millenanda Dwi Cahya]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="366" y="20" width="42" height="15" uuid="abdfcfec-46c8-44ef-9d36-f967a75d9f1f"/>
+				<reportElement x="408" y="20" width="42" height="15" uuid="0b6f1514-1951-4b4b-922d-2d9c7efe940a"/>
 				<text><![CDATA[Jakarta, ]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="420" y="56" width="115" height="15" uuid="abf330e8-a085-4140-8d48-65a50c50b514"/>
+				<text><![CDATA[Millenanda Dwi Cahya]]></text>
+			</staticText>
 			<textField>
-				<reportElement x="408" y="20" width="100" height="15" uuid="52c8b210-4c75-451c-8d7d-87f15d5cdd74"/>
+				<reportElement x="450" y="20" width="100" height="15" uuid="979d7ded-56b1-49fa-923e-1ff6e6a9a4f5"/>
 				<textFieldExpression><![CDATA[new java.util.Date().format("dd-MM-yyyy")]]></textFieldExpression>
 			</textField>
 		</band>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0102192e-ff88-412d-9f09-45c0440f1ca8">
 	<property name="ireport.zoom" value="1.4641000000000095"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="12"/>
+	<property name="ireport.y" value="20"/>
 	<parameter name="tgl1" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -31,7 +31,7 @@ WHERE
 	<title>
 		<band height="129" splitType="Stretch">
 			<staticText>
-				<reportElement x="81" y="0" width="409" height="69" uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e"/>
+				<reportElement x="89" y="0" width="425" height="69" uuid="bc7f0659-2fae-4eb1-8552-473e273e8d7e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="24" isBold="true"/>
 				</textElement>
@@ -49,13 +49,13 @@ WHERE
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
-				<text><![CDATA[HP 0823 2878 6133]]></text>
+				<text><![CDATA[HP. 0823 2878 6133]]></text>
 			</staticText>
 			<line>
 				<reportElement x="0" y="121" width="554" height="1" uuid="4371368f-c563-4a8c-bb5a-085b0b80f3aa"/>
 			</line>
-			<image hAlign="Center" vAlign="Middle">
-				<reportElement x="1" y="10" width="91" height="89" uuid="0d90995a-fdbf-4dd4-aaa2-ff8c6c5fcbe4"/>
+			<image>
+				<reportElement x="0" y="19" width="100" height="50" uuid="eea77668-1015-4f7f-ab87-b67af32e1a9a"/>
 				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
 			</image>
 		</band>
@@ -234,7 +234,7 @@ WHERE
 		<band height="13" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="105" splitType="Stretch">
+		<band height="71" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="376" height="20" uuid="ecd145d2-15c1-48e5-9cfd-cda9522cb88c"/>
 				<box>
@@ -264,15 +264,15 @@ WHERE
 				<textFieldExpression><![CDATA[$V{Total}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="356" y="83" width="115" height="15" uuid="d7c42167-7a1c-4927-a973-24b9877e67fd"/>
-				<text><![CDATA[Millenanda Dwi Cahya]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="356" y="20" width="42" height="15" uuid="14c35a46-95be-4fcc-8c1b-74d28ba8bb61"/>
+				<reportElement x="399" y="20" width="42" height="15" uuid="9247f21a-dfbe-48f8-9998-f772941d0f85"/>
 				<text><![CDATA[Jakarta, ]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="399" y="56" width="115" height="15" uuid="0a3b1f8f-3da5-4b11-9e28-87449c7ada5b"/>
+				<text><![CDATA[Millenanda Dwi Cahya]]></text>
+			</staticText>
 			<textField>
-				<reportElement x="398" y="20" width="100" height="15" uuid="6fcfcd88-b619-4dd7-81e4-0970b8170346"/>
+				<reportElement x="441" y="20" width="100" height="15" uuid="e812c003-0ab4-4d6b-baf3-330ce947ed25"/>
 				<textFieldExpression><![CDATA[new java.util.Date().format("dd-MM-yyyy")]]></textFieldExpression>
 			</textField>
 		</band>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="dcbb58ce-f0b3-4f75-86a4-127df423074f">
-	<property name="ireport.zoom" value="1.4641000000000015"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.zoom" value="1.771561000000002"/>
+	<property name="ireport.x" value="43"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT 
@@ -57,7 +57,7 @@ ORDER BY p2.kode_pengangkut]]>
 				<text><![CDATA[Laporan Detail Pengiriman]]></text>
 			</staticText>
 			<image hAlign="Center" vAlign="Middle">
-				<reportElement x="1" y="10" width="91" height="89" uuid="0d90995a-fdbf-4dd4-aaa2-ff8c6c5fcbe4"/>
+				<reportElement x="1" y="0" width="91" height="89" uuid="3f573b7b-dc2e-45e2-9952-a3b30a795f0c"/>
 				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
 			</image>
 		</band>

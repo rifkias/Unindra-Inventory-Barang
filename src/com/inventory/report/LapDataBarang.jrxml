@@ -61,7 +61,7 @@ FROM
 				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
 			</image>
 			<image hAlign="Center" vAlign="Middle">
-				<reportElement x="28" y="0" width="91" height="89" uuid="9af1f68c-82f5-47f5-afec-41b9d27189a6"/>
+				<reportElement x="0" y="10" width="91" height="89" uuid="9af1f68c-82f5-47f5-afec-41b9d27189a6"/>
 				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
 			</image>
 		</band>

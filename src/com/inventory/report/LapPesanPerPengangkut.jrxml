@@ -60,11 +60,12 @@ WHERE a.kode_pengangkut = $P{kode_pengangkut}]]>
 				<text><![CDATA[HP. 0823 2878 6133]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="62" y="10" width="424" height="69" uuid="474c8d5b-54e0-48f4-9526-37fdb3d241e2"/>
+				<reportElement x="70" y="30" width="444" height="69" uuid="474c8d5b-54e0-48f4-9526-37fdb3d241e2"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="24" isBold="true"/>
 				</textElement>
-				<text><![CDATA[PT Anugrah Makmur Sentosa Abadi]]></text>
+				<text><![CDATA[PT Anugrah Makmur Sentosa Abadi
+]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="120" y="79" width="331" height="20" uuid="087b7b5d-76e0-4588-850c-e88c253bff20"/>
@@ -73,8 +74,8 @@ WHERE a.kode_pengangkut = $P{kode_pengangkut}]]>
 				</textElement>
 				<text><![CDATA[Jl. AM Sangaji 38. Petojo Utara. Jakarta Pusat]]></text>
 			</staticText>
-			<image hAlign="Center" vAlign="Middle">
-				<reportElement x="1" y="10" width="91" height="89" uuid="0d90995a-fdbf-4dd4-aaa2-ff8c6c5fcbe4"/>
+			<image hAlign="Center">
+				<reportElement x="10" y="29" width="74" height="50" uuid="5c0bdb67-508e-418f-a014-aaf2ad569f17"/>
 				<imageExpression><![CDATA["../img/Logo.jpeg"]]></imageExpression>
 			</image>
 		</band>
@@ -350,12 +351,9 @@ WHERE a.kode_pengangkut = $P{kode_pengangkut}]]>
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="149" splitType="Stretch">
+		<band height="54" splitType="Stretch">
 			<staticText>
-				<reportElement x="1" y="0" width="399" height="20" uuid="d707c8e0-9e48-4e07-9314-3cc8b8860d47"/>
+				<reportElement x="0" y="0" width="399" height="20" uuid="d707c8e0-9e48-4e07-9314-3cc8b8860d47"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -369,7 +367,7 @@ WHERE a.kode_pengangkut = $P{kode_pengangkut}]]>
 				<text><![CDATA[Total     ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="400" y="0" width="155" height="20" uuid="015e4e21-2314-4da1-8506-b9e48ea5c0e7"/>
+				<reportElement x="399" y="0" width="155" height="20" uuid="015e4e21-2314-4da1-8506-b9e48ea5c0e7"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -382,16 +380,20 @@ WHERE a.kode_pengangkut = $P{kode_pengangkut}]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
 			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
 			<staticText>
-				<reportElement x="344" y="83" width="115" height="15" uuid="7b94a696-e279-4398-a930-ebfa22bf0e8b"/>
+				<reportElement x="411" y="27" width="115" height="15" uuid="cc2375c5-6a0d-40a4-8d01-ad3c9572ff36"/>
 				<text><![CDATA[Millenanda Dwi Cahya]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="344" y="20" width="42" height="15" uuid="b88fdf8d-2236-4fba-865a-12fcfc7eae45"/>
+				<reportElement x="400" y="0" width="42" height="15" uuid="49aaf7c8-9df3-4f55-89b3-f01f32f03404"/>
 				<text><![CDATA[Jakarta, ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="386" y="20" width="100" height="15" uuid="37836ba4-d114-431f-b25a-9d4bf5e3abfe"/>
+				<reportElement x="451" y="0" width="100" height="15" uuid="7a863d29-41ec-40c0-9044-d3e0a106f49e"/>
 				<textFieldExpression><![CDATA[new java.util.Date().format("dd-MM-yyyy")]]></textFieldExpression>
 			</textField>
 		</band>
